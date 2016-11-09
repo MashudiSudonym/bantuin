@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!--loadtitle-->
+    <title>{% block title %}{% endblock %}</title>
+
+    <!--load main css and more-->
+    {% include "layout/head.html" %}
+
+
+</head>
+
+<body id="page-top">
+
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+
+        <!--load nav prop-->
+        {% include "layout/nav.html" %}
+
+    </nav>
+
+    <!--load content-->
+    {% block content %}{% endblock%}
+
+    <!--load main js-->
+    {% include "layout/js.html" %}
+
+</body>
+
+</html>
