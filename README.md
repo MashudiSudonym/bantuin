@@ -5,6 +5,6 @@ Konsep bantuin adalah guna memudahkan masyarakat mencari bantuan terhadap masala
 
 ## Tim Bantuin
 
-* Muhamad Mashudi Ardi Winata (MashudiSudonym)
-* Akhi Syabab Ahmad
+* Muhamad Mashudi Ardi Winata 
+* Akhi Syabab Ahmad 
 * Muhammad Alfian Saputra
