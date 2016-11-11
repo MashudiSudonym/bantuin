@@ -18,7 +18,7 @@ Konsep bantuin adalah guna memudahkan masyarakat mencari bantuan terhadap masala
 * Django 1.10.3
 * django-registration 2.1.2
 
-# Pasang Bantion ke localhost
+# Pasang Bantuin ke localhost
 
 Copy source code
 
