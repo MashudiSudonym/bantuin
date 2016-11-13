@@ -8,3 +8,30 @@ Konsep bantuin adalah guna memudahkan masyarakat mencari bantuan terhadap masala
 * Muhamad Mashudi Ardi Winata 
 * Akhi Syabab Ahmad
 * Muhammad Alfian Saputra
+
+# Memasang Bantuin
+
+## Lingkungan Development / packages
+
+### Requirement 
+
+* Django 1.10.3
+* django-registration 2.1.2
+
+# Pasang Bantuin ke localhost
+
+Copy source code
+
+> git clone https://github.com/MashudiSudonym/bantuin.git
+
+Install paket yang dibutuhkan
+
+> pip install -r requirements.txt
+
+Atur database
+
+> python manage.py syncdb
+
+Menjalankan Bantuin di localhost
+
+> python manage.py runserver
