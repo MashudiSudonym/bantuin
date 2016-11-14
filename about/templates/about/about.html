@@ -7,7 +7,7 @@
 <!--konten-->
 {% block content %}
 
-
+{% load static %}
     <!-- About Section -->
     <section id="about">
         <div class="container">
@@ -28,7 +28,7 @@
                     <ul class="timeline">
                         <li>
                             <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="img/about/1.jpg" alt="">
+                                <img class="img-circle img-responsive" src="{% static 'img/hand.svg' %}" alt="">
                             </div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
@@ -42,7 +42,7 @@
                         </li>
                         <li class="timeline-inverted">
                             <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="img/about/2.jpg" alt="">
+                                <img class="img-circle img-responsive" src="{% static 'img/rocket.svg' %}" alt="">
                             </div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
@@ -56,7 +56,7 @@
                         </li>
                         <li>
                             <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="img/about/3.jpg" alt="">
+                                <img class="img-circle img-responsive" src="{% static 'img/users.svg' %}" alt="">
                             </div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
@@ -83,7 +83,6 @@
     </section>
 
     <!-- Team Section -->
-{% load static %}
     <section id="team" class="bg-light-gray">
         <div class="container">
             <div class="row">
