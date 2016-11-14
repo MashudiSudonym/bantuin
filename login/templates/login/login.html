@@ -1,0 +1,20 @@
+{% extends 'login/base.html' %}
+
+<!--judul-->
+{% block title %} Bantuin - Login {% endblock %}
+
+<!--konten-->
+{% block content %}
+
+<div class="form">
+{% load static %}
+  	<img src="{% static 'img/logo.png' %}" height="128px" width="128px" />
+  	<form>
+	    <input type="text" placeholder="username"/>
+	    <input type="password" placeholder="password"/>
+	    <button>login</button>
+	    <p class="message-forgot">Forgot password? <a href="/forgot">Enter</a></p>
+	    <p class="message-register">Not registered? <a href="/register">Create an account</a></p>
+  	</form>
+</div>
+{% endblock %}
