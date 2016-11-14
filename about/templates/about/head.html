@@ -5,7 +5,6 @@
 <meta name="author" content="">
 
 <!-- Bootstrap Core CSS -->
- 
 <link href="/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
 <!-- Custom Fonts -->
@@ -18,7 +17,11 @@
 
 <!-- Theme CSS -->
 
-<link href="/static/css/creative.css" rel="stylesheet">
+{% load static %}
+<!-- Custom CSS -->
+<link href="{% static 'css/agency.css' %}" rel="stylesheet">
+<link href="{% static 'css/about.css' %}" rel="stylesheet">
+
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
