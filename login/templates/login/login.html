@@ -9,18 +9,25 @@
 <div class="form">
 {% load static %}
   	<img src="{% static 'img/logo.png' %}" height="128px" width="128px" />
-  	<form class="register-form">
+  	<form class="register-form" id="register">
 	    <input type="text" placeholder="name"/>
-	    <input type="password" placeholder="password"/>
 	    <input type="text" placeholder="email address"/>
+	    <input type="password" placeholder="password"/>
+	    <input type="password" placeholder="repeat password"/>
 	    <button>create</button>
-	    <p class="message">Already registered? <a href="#">Sign In</a></p>
+	    <p class="message-login">Already registered? <a href="#">Sign In</a></p>
   	</form>
-  	<form class="login-form">
+  	<form class="forgot-form" id="forgot">
+	    <input type="text" placeholder="email address"/>
+	    <button>Submit</button>
+	    <p class="message-login">Already registered? <a href="#">Sign In</a></p>
+  	</form>
+  	<form class="login-form" id="login">
 	    <input type="text" placeholder="username"/>
 	    <input type="password" placeholder="password"/>
 	    <button>login</button>
-	    <p class="message">Not registered? <a href="#">Create an account</a></p>
+	    <p class="message-forgot">Forgot password? <a href="#">Enter</a></p>
+	    <p class="message-register">Not registered? <a href="#">Create an account</a></p>
   	</form>
 </div>
 {% endblock %}
