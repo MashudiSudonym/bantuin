@@ -13,7 +13,7 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
+from django.conf.urls import url, include
 from django.contrib import admin
 
 from homepage import views as homepage_views
@@ -22,7 +22,8 @@ from about import views as about_views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', homepage_views.index),
-    url(r'^about/', about_views.index),
+    url(r'^about/', include('about.urls')),
+    url(r'^login/', include('login.urls')),
     # url spesial untuk tes halaman error 404, 500, dll. Hapus / jadikan komentar ini jika sudah dideploy ke server
     url(r'^404/', homepage_views.handler404),
     url(r'^500/', homepage_views.handler500),
