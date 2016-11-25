@@ -16,24 +16,16 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 
-#from homepage import views as homepage_views
-#from about import views as about_views
-
 urlpatterns = [
-#   url(r'^$', homepage_views.index),
     url(r'^admin/', admin.site.urls),
 	url(r'^', include('home.urls')),
     url(r'^about/', include('about.urls')),
     url(r'^login/', include('login.login_urls')),
     url(r'^register/', include('login.register_urls')),
     url(r'^forgot/', include('login.forgot_urls')),
-
-
-    # url spesial untuk tes halaman error 404, 500, dll. Hapus / jadikan komentar ini jika sudah dideploy ke server
-     #url(r'^404/', homepage_views.handler404),
-    #url(r'^500/', homepage_views.handler500),
     url(r'^404/', include('home.urls')),
     url(r'^500/', include('home.urls')),
+    url(r'^accounts/', include('registration.backends.hmac.urls')),
    
 ]
 

@@ -1,15 +1,19 @@
-{% extends "layout/base.html" %}
+{% extends "registerlayout/base.html" %}
 {% load i18n %}
 
+<!--konten-->
 {% block content %}
-<form method="post" action=".">
-  {% csrf_token %} 
-  {{ form.as_p }}
 
-  <input type="submit" value="{% trans 'Log in' %}" />
-  <input type="hidden" name="next" value="{{ next }}" />
-</form>
-
-<p>{% trans "Forgot password" %}? <a href="{% url 'auth_password_reset' %}">{% trans "Reset it" %}</a>!</p>
-<p>{% trans "Not member" %}? <a href="{% url 'registration_register' %}">{% trans "Register" %}</a>!</p>
+<div class="form">
+{% load static %}
+  <a href="/"><img src="{% static 'img/logo.png' %}" height="128px" width="128px" /></a>
+  	<form method="post" action=".">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Log in</button>
+        <input type="hidden" name="next" value="{{ next }}" />
+	    <p class="message-forgot">Forgot password? <a href="{% url 'auth_password_reset' %}">Enter</a></p>
+	    <p class="message-register">Not registered? <a href="{% url 'registration_register' %}">Create an account</a></p>
+  	</form>
+</div>
 {% endblock %}
