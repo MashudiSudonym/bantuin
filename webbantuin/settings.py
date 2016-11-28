@@ -125,13 +125,13 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'assets'),
-    '/assets/'
+    os.path.join(BASE_DIR, 'static'),
+    '/static/'
 )
 
 MEDIA_URL = '/media/'
 
-MEDIA_ROOT = os.path.join(BASE_DIR, "assets/")
+MEDIA_ROOT = os.path.join(BASE_DIR, "static/")
 
 ACCOUNT_ACTIVATION_DAYS = 7
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
@@ -142,3 +142,4 @@ EMAIL_HOST_USER = 'muhamadmashudiardiwinata@gmail.com'
 EMAIL_HOST_PASSWORD = 'Changethis' # ubah dengan password anda
 SERVER_EMAIL = 'muhamadmashudiardiwinata@gmail.com'
 DEFAULT_FROM_EMAIL = "Bantuin"
+LOGIN_REDIRECT_URL = '/'
