@@ -3,6 +3,10 @@
 
 {% block content %}
 
-<p>{% trans "Account activation failed" %}</p>
+<div class="form">
+{% load static %}
+  	<a href="/"><img src="{% static 'img/logo.png' %}" height="128px" width="128px" /></a>
+  	<p>{% trans "Account activation failed" %}</p>
+</div>
 
 {% endblock %}

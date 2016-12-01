@@ -38,11 +38,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'crispy_forms',
     'home',
     'about',
     'login',
 
 ]
+
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -138,8 +141,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'muhamadmashudiardiwinata@gmail.com'
-EMAIL_HOST_PASSWORD = 'Changethis' # ubah dengan password anda
-SERVER_EMAIL = 'muhamadmashudiardiwinata@gmail.com'
+EMAIL_HOST_USER = 'elliotanderson069@gmail.com'
+EMAIL_HOST_PASSWORD = 'changethis' # ubah dengan password anda
+SERVER_EMAIL = 'elliotanderson069@gmail.com'
 DEFAULT_FROM_EMAIL = "Bantuin"
 LOGIN_REDIRECT_URL = '/'

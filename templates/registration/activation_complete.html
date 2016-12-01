@@ -2,5 +2,9 @@
 {% load i18n %}
 
 {% block content %}
-<p>{% trans "Your account is now activated." %}</p>
+<div class="form">
+{% load static %}
+  	<a href="/"><img src="{% static 'img/logo.png' %}" height="128px" width="128px" /></a>
+  	<p>{% trans "Your account is now activated." %}</p>
+</div>
 {% endblock %}
