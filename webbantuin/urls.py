@@ -25,8 +25,8 @@ urlpatterns = [
     url(r'^forgot/', include('login.forgot_urls')),
     url(r'^404/', include('home.urls')),
     url(r'^500/', include('home.urls')),
-    url(r'^accounts/', include('registration.backends.hmac.urls')),
-   
+    url(r'^accounts/', include('registration.backends.hmac.urls')), 
+#    url(r'^accounts/login/', include('home.urls')), 
 ]
 
 #handler404 = include('home.urls')

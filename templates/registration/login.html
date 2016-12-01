@@ -1,5 +1,21 @@
 {% extends "registerlayout/base.html" %}
 
+{% if request.user.is_authenticated %}
+    <html lang="en-US">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="refresh" content="0; url=/">
+            <title>Logging Out</title>
+        </head>
+        <body>
+        </body>
+    <html>
+
+{% else %}
+
+
+
+
 <!--konten-->
 {% block content %}
 
@@ -28,3 +44,6 @@
 </div>
 
 {% endblock %}
+
+{% endif %}
+
