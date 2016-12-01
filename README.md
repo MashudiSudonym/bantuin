@@ -15,8 +15,9 @@ Konsep bantuin adalah guna memudahkan masyarakat mencari bantuan terhadap masala
 
 ### Requirement 
 
-* Django 1.9
+* Django 1.10.3
 * django-registration 2.1.2
+* django-crispy-forms 1.6.1
 
 # Pasang Bantuin ke localhost
 

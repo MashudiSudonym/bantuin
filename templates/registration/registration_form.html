@@ -12,7 +12,27 @@
   	<a href="/"><img src="{% static 'img/logo.png' %}" height="128px" width="128px" /></a>
   	<form method="post" action=".">
 	    {% csrf_token %}
-        {{ form.as_p }}
+
+		{{ form.non_field_errors }}
+        <p>
+        {{ form.username }}
+        {{ form.username.errors }}
+        </p>
+
+        <p>
+        {{ form.email }}
+        {{ form.email.errors }}
+        </p>
+
+		<p>
+        {{ form.password1 }}
+        {{ form.password1.errors }}
+        </p>
+
+		<p>
+        {{ form.password2 }}
+        {{ form.password2.errors }}
+        </p>
 	    <button type="submit">Sign Up</button>
 	    <p class="message-login">Already registered? <a href="/accounts/login/">Sign In</a></p>
   	</form>
