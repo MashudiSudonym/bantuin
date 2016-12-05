@@ -18,6 +18,8 @@ Konsep bantuin adalah guna memudahkan masyarakat mencari bantuan terhadap masala
 * Django 1.10.3
 * django-registration 2.1.2
 * django-crispy-forms 1.6.1
+* gunicorn 19.6.0
+* whitenoise 3.2.2
 
 # Pasang Bantuin ke localhost
 
@@ -29,10 +31,13 @@ Install paket yang dibutuhkan
 
 > pip install -r requirements.txt
 
-Atur database
-
 > 
 
 Menjalankan Bantuin di localhost
+
+* buat file bernama local.py di folder webbantuin/settings dan copas isinya dari file production.py yang ada di folder yg sama
+* setelah copas ke local.py, pada file local.py cari DEBUG = False dan ganti dengan DEBUG = True
+* tetap pada file local.py, ganti ALLOWED_HOSTS = ['*'] dengan ALLOWED_HOSTS = []
+* simpan dan jalankan pada local server dengan perintah :
 
 > python manage.py runserver
