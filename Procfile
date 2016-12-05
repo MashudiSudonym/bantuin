@@ -1,0 +1,1 @@
+web: gunicorn webbantuin.wsgi --log-file -
