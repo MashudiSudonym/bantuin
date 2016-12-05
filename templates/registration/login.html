@@ -1,7 +1,12 @@
 {% extends "registerlayout/base.html" %}
 
+
 <!--konten-->
 {% block content %}
+
+{% if request.user.is_authenticated %}
+    <meta http-equiv="refresh" content="0; url=/" />
+{% else %}
 
 <div class="form">
 {% load static %}
@@ -27,4 +32,8 @@
   	</form>
 </div>
 
+{% endif %}
 {% endblock %}
+
+
+
