@@ -20,14 +20,8 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
 	url(r'^', include('home.urls')),
     url(r'^about/', include('about.urls')),
-    # url(r'^login/', include('login.login_urls')),
-    # url(r'^register/', include('login.register_urls')),
-    url(r'^forgot/', include('login.forgot_urls')),
-    url(r'^404/', include('home.urls')),
-    url(r'^500/', include('home.urls')),
-    url(r'^accounts/', include('registration.backends.hmac.urls')), 
-#    url(r'^accounts/login/', include('home.urls')), 
+    url(r'^accounts/', include('registration.backends.hmac.urls')),
 ]
 
-#handler404 = include('home.urls')
-#handler500 = include('home.urls')
+handler404 = 'home.views.handler404'
+handler500 = 'home.views.handler500'

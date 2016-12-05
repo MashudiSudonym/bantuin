@@ -31,7 +31,7 @@ Install paket yang dibutuhkan
 
 Atur database
 
-> python manage.py syncdb
+> 
 
 Menjalankan Bantuin di localhost
 

@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
 import os
+
+# email
 from django.core.mail import send_mail
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -125,24 +127,33 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
+STATIC_ROOT = 'staticfiles'
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
-    '/static/'
+    'static/'
 )
 
-MEDIA_URL = '/media/'
-
-MEDIA_ROOT = os.path.join(BASE_DIR, "static/")
-
+# masa berlaku link aktivasi dari registrasi
 ACCOUNT_ACTIVATION_DAYS = 7
+
+# email backend django
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# kalau punya akun mailtrap.io silahkan ganti host user dan host passwordnya dengan pengaturan di mailtrap kalian
 EMAIL_USE_TLS = True
+# kalau mau ngetes di lokal saran saya pakai mailtrap jadi hapus tanda komentar biar bisa pakai mailtrap
+# EMAIL_PORT = 2525
+# EMAIL_HOST = 'mailtrap.io'
+# EMAIL_HOST_USER = 'user'
+# EMAIL_HOST_PASSWORD = 'pass'
+# kalau mau ngetes pakai email gmail hapus tanda komentar biar bisa pakai gmail
 EMAIL_PORT = 587
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'elliotanderson069@gmail.com'
-EMAIL_HOST_PASSWORD = 'fami15121997' # ubah dengan password anda
-SERVER_EMAIL = 'elliotanderson069@gmail.com'
+EMAIL_HOST_USER = 'changemail'
+EMAIL_HOST_PASSWORD = 'changepass' #change this
+# SERVER_EMAIL = ''
 DEFAULT_FROM_EMAIL = "Bantuin"
+
+# login redirect after user login
 LOGIN_REDIRECT_URL = '/'
