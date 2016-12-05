@@ -148,7 +148,7 @@ EMAIL_USE_TLS = True
 # EMAIL_HOST_USER = 'user'
 # EMAIL_HOST_PASSWORD = 'pass'
 # kalau mau ngetes pakai email gmail hapus tanda komentar biar bisa pakai gmail
-EMAIL_PORT = 587
+EMAIL_PORT = 465
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'muhamadmashudiardiwinata@gmail.com'
 EMAIL_HOST_PASSWORD = '30031995akusajajancoeg' #change this
