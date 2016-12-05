@@ -150,13 +150,9 @@ EMAIL_USE_TLS = True
 # kalau mau ngetes pakai email gmail hapus tanda komentar biar bisa pakai gmail
 EMAIL_PORT = 587
 EMAIL_HOST = 'smtp.gmail.com'
-# jika ini di local.py gunakan format ini dan hilangkan tanda komentar
-# EMAIL_HOST_USER = 'muhamadmashudiardiwinata@gmail.com'
-# EMAIL_HOST_PASSWORD = '30031995akusajajancoeg' #change this
-# jika ini untuk production.py gunakan format ini dan beri komentar untuk format diatas yang untuk local.py
-EMAIL_HOST_USER = os.environ['muhamadmashudiardiwinata@gmail.com']
-EMAIL_HOST_PASSWORD = os.environ['30031995akusajajancoeg']
-# SERVER_EMAIL = ''
+EMAIL_HOST_USER = 'muhamadmashudiardiwinata@gmail.com'
+EMAIL_HOST_PASSWORD = '30031995akusajajancoeg' #change this
+SERVER_EMAIL = 'muhamadmashudiardiwinata@gmail.com'
 DEFAULT_FROM_EMAIL = "Bantuin"
 
 # login redirect after user login
