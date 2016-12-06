@@ -155,7 +155,7 @@ EMAIL_HOST = 'smtp.zoho.com'
 EMAIL_HOST_USER = 'adminbantuin@zoho.com'
 EMAIL_HOST_PASSWORD = '123sanding' #change this
 # SERVER_EMAIL = 'muhamadmashudiardiwinata@gmail.com'
-DEFAULT_FROM_EMAIL = "Bantuin"
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 # login redirect after user login
 LOGIN_REDIRECT_URL = '/'
