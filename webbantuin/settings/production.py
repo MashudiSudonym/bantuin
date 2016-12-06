@@ -204,7 +204,7 @@ EMAIL_USE_SSL = True
 EMAIL_PORT = 465
 EMAIL_HOST = 'smtp.zoho.com'
 EMAIL_HOST_USER = 'adminbantuin@zoho.com'
-EMAIL_HOST_PASSWORD = '123sanding' #change this
+EMAIL_HOST_PASSWORD = 'sadas' #change this
 # SERVER_EMAIL = 'muhamadmashudiardiwinata@gmail.com'
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
