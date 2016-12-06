@@ -134,11 +134,11 @@ WSGI_APPLICATION = 'webbantuin.wsgi.application'
 # di production.py pakai database yg ini
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd31bcrk578chff',
-        'USER': 'fhkeixncymnkkc',
-        'PASSWORD': 'WRPV1d0vh6tIZ3t96sQx3mEKBo',
-        'HOST': 'ec2-50-17-234-66.compute-1.amazonaws.com',
+        'ENGINE': 'engina',
+        'NAME': 'nama',
+        'USER': 'user',
+        'PASSWORD': 'pass',
+        'HOST': 'hosta',
         'PORT': '5432',
     }
 }
@@ -204,7 +204,7 @@ EMAIL_USE_SSL = True
 EMAIL_PORT = 465
 EMAIL_HOST = 'smtp.zoho.com'
 EMAIL_HOST_USER = 'adminbantuin@zoho.com'
-EMAIL_HOST_PASSWORD = '123sanding' #change this
+EMAIL_HOST_PASSWORD = 'sadis' #change this
 # SERVER_EMAIL = 'muhamadmashudiardiwinata@gmail.com'
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
