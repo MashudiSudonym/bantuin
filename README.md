@@ -20,6 +20,7 @@ Konsep bantuin adalah guna memudahkan masyarakat mencari bantuan terhadap masala
 * django-crispy-forms 1.6.1
 * gunicorn 19.6.0
 * whitenoise 3.2.2
+# django-jet 1.0.4
 
 # Pasang Bantuin ke localhost
 
@@ -31,7 +32,7 @@ Install paket yang dibutuhkan
 
 > pip install -r requirements.txt
 
-> 
+catatan : buka dan edit file requirements.txt, hapus paket psycopg2==2.6.2 kemudian simpan dan lakukan installasi seperti panduan di atas.
 
 Menjalankan Bantuin di localhost
 
@@ -41,3 +42,4 @@ Menjalankan Bantuin di localhost
 * simpan dan jalankan pada local server dengan perintah :
 
 > python manage.py runserver
+
