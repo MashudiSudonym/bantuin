@@ -151,9 +151,9 @@ EMAIL_USE_TLS = True
 # kalau mau ngetes pakai email gmail hapus tanda komentar biar bisa pakai gmail
 EMAIL_PORT = 587
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'asd'
-EMAIL_HOST_PASSWORD = 'asd' #change this
-SERVER_EMAIL = 'asd'
+EMAIL_HOST_USER = 'muhamadmashudiardiwinata@gmail.com'
+EMAIL_HOST_PASSWORD = '30031995akusajajancoeg' #change this
+SERVER_EMAIL = 'muhamadmashudiardiwinata@gmail.com'
 DEFAULT_FROM_EMAIL = "Bantuin"
 
 # login redirect after user login
