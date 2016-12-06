@@ -143,6 +143,7 @@ ACCOUNT_ACTIVATION_DAYS = 7
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 # kalau punya akun mailtrap.io silahkan ganti host user dan host passwordnya dengan pengaturan di mailtrap kalian
 EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
 # kalau mau ngetes di lokal saran saya pakai mailtrap jadi hapus tanda komentar biar bisa pakai mailtrap
 # EMAIL_PORT = 2525
 # EMAIL_HOST = 'mailtrap.io'
@@ -150,10 +151,10 @@ EMAIL_USE_TLS = True
 # EMAIL_HOST_PASSWORD = 'pass'
 # kalau mau ngetes pakai email gmail hapus tanda komentar biar bisa pakai gmail
 EMAIL_PORT = 587
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'muhamadmashudiardiwinata@gmail.com'
-EMAIL_HOST_PASSWORD = '30031995akusajajancoeg' #change this
-SERVER_EMAIL = 'muhamadmashudiardiwinata@gmail.com'
+EMAIL_HOST = 'smtp.zoho.com'
+EMAIL_HOST_USER = 'adminbantuin@zoho.com'
+EMAIL_HOST_PASSWORD = '123sanding' #change this
+# SERVER_EMAIL = 'muhamadmashudiardiwinata@gmail.com'
 DEFAULT_FROM_EMAIL = "Bantuin"
 
 # login redirect after user login
