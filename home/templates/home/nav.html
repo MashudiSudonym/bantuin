@@ -28,7 +28,10 @@
                     </li>
                     {% else %}
                     <li>
-                        <a class="page-scroll" href="/accounts/login/">Log In</a>
+                        <a class="page-scroll" href="{% url 'registration_register' %}">Register</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="/accounts/login/">Login</a>
                     </li>
                     {% endif %}
                 </ul>

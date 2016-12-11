@@ -1,5 +1,7 @@
 {% extends "registerlayout/base.html" %}
 
+<!--judul-->
+{% block title %} Bantuin - Login{% endblock %}
 
 <!--konten-->
 {% block content %}
@@ -9,8 +11,7 @@
 {% else %}
 
 <div class="form">
-{% load static %}
-  <a href="/"><img src="{% static 'img/logo.png' %}" height="128px" width="128px" /></a>
+  <a href="/"><img src="/static/register/img/logo.png" height="128px" width="128px" /></a>
   	<form method="post" action=".">
         {% csrf_token %}
 

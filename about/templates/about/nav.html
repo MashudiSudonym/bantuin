@@ -19,16 +19,16 @@
                     <li>
                         <a class="page-scroll" href="#team">Team</a>
                     </li>
-                    <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
-                    </li>
                     {% if user.is_authenticated %}
                     <li>
                         <a class="page-scroll" href="/accounts/logout/">Logout</a>
                     </li>
                     {% else %}
                     <li>
-                        <a class="page-scroll" href="/accounts/login/">Log In</a>
+                        <a class="page-scroll" href="{% url 'registration_register' %}">Register</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="/accounts/login/">Login</a>
                     </li>
                     {% endif %}
                 </ul>
