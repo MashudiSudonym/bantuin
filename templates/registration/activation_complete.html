@@ -1,13 +1,15 @@
 {% extends "registerlayout/base.html" %}
 {% load i18n %}
 
+<!--judul-->
+{% block title %} Bantuin {% endblock %}
+
 {% block content %}
 
 <meta http-equiv="refresh" content="4; url=/accounts/login" />
 
 <div class="form">
-{% load static %}
-  	<a href="/"><img src="{% static 'img/logo.png' %}" height="128px" width="128px" /></a>
+	<a href="/"><img src="/static/register/img/logo.png" height="128px" width="128px" /></a>
   	<p>{% trans "Akunmu sudah aktif, Selamat bergabung dengan Bantuin." %}</p>
 </div>
 

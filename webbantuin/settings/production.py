@@ -133,10 +133,10 @@ WSGI_APPLICATION = 'webbantuin.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'jjs',
-        'USER': 'sa',
-        'PASSWORD': 'sa',
-        'HOST': 'sad',
+        'NAME': 'd31bcrk578chff',
+        'USER': 'fhkeixncymnkkc',
+        'PASSWORD': 'WRPV1d0vh6tIZ3t96sQx3mEKBo',
+        'HOST': 'ec2-50-17-234-66.compute-1.amazonaws.com',
         'PORT': '5432',
     }
 }
@@ -201,8 +201,8 @@ EMAIL_USE_SSL = True
 # kalau mau ngetes pakai email gmail hapus tanda komentar biar bisa pakai gmail
 EMAIL_PORT = 465
 EMAIL_HOST = 'smtp.zoho.com'
-EMAIL_HOST_USER = 'kimochi@zoho.com'
-EMAIL_HOST_PASSWORD = '123ikkeh' #change this
+EMAIL_HOST_USER = 'adminbantuin@zoho.com'
+EMAIL_HOST_PASSWORD = '123sanding' #change this
 # SERVER_EMAIL = 'muhamadmashudiardiwinata@gmail.com'
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
