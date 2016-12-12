@@ -117,8 +117,8 @@
 /* END Form */
 /* Demo Purposes */
 body {
-/*  background: #ccc; */
-  background-image: url('../img/background.jpg');
+  background: #EF3B3A; 
+  /*background-image: url('../img/background.jpg');*/
   background-size: 100%;
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;

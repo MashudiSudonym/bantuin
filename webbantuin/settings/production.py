@@ -52,7 +52,7 @@ INSTALLED_APPS = [
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 # jet admin template pack
-JET_DEFAULT_THEME = 'green'
+JET_DEFAULT_THEME = 'default'
 
 JET_THEMES = [
     {
