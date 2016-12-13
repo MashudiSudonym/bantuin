@@ -50,7 +50,7 @@
 }
 .form button {
   outline: 0;
-  background: #EF3B3A;
+  background: #2c3e50;
   width: 100%;
   border: 0;
   padding: 15px;
@@ -117,7 +117,7 @@
 /* END Form */
 /* Demo Purposes */
 body {
-  background: #EF3B3A; 
+  background: #2c3e50; 
   /*background-image: url('../img/background.jpg');*/
   background-size: 100%;
   font-family: "Roboto", sans-serif;
