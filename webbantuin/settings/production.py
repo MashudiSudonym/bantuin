@@ -133,10 +133,10 @@ WSGI_APPLICATION = 'webbantuin.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd31bcrk578chff',
-        'USER': 'fhkeixncymnkkc',
-        'PASSWORD': 'WRPV1d0vh6tIZ3t96sQx3mEKBo',
-        'HOST': 'ec2-50-17-234-66.compute-1.amazonaws.com',
+        'NAME': 'dc2jrhdapuajln',
+        'USER': 'rflesjyupujxpk',
+        'PASSWORD': '14cfa752fe1de4cfb4339a6e23ff73e126bd04a0975829f50693b49ee13b1383',
+        'HOST': 'ec2-50-17-236-15.compute-1.amazonaws.com',
         'PORT': '5432',
     }
 }
