@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'home',
     'about',
+    'profil',
 ]
 
 # crispy template pack
@@ -133,10 +134,10 @@ WSGI_APPLICATION = 'webbantuin.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'ss',
-        'USER': 'ss',
-        'PASSWORD': 'ss',
-        'HOST': 'ss',
+        'NAME': 'sa',
+        'USER': 'da',
+        'PASSWORD': 'asd',
+        'HOST': 'sa',
         'PORT': '5432',
     }
 }
@@ -165,7 +166,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Jakarta'
 
 USE_I18N = True
 
@@ -201,8 +202,8 @@ EMAIL_USE_SSL = True
 # kalau mau ngetes pakai email gmail hapus tanda komentar biar bisa pakai gmail
 EMAIL_PORT = 465
 EMAIL_HOST = 'smtp.zoho.com'
-EMAIL_HOST_USER = 'sad@zoho.com'
-EMAIL_HOST_PASSWORD = '123kimochi' #change this
+EMAIL_HOST_USER = 'adm@zoho.com'
+EMAIL_HOST_PASSWORD = '123hhasj' #change this
 # SERVER_EMAIL = 'muhamadmashudiardiwinata@gmail.com'
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
