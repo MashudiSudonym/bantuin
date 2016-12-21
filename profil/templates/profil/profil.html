@@ -1,1 +1,14 @@
-<h1>ini halaman profil</h1>
+{% if user.is_authenticated %}
+
+<h1>ini halaman profil {{ username }}</h1>
+
+username : {{ username }} <br>
+email : {{ email }} <br>
+first name : {{ firstname }} <br>
+last name : {{ lastname }} <br>
+
+{% else %}
+
+<meta http-equiv="refresh" content="0; url=/accounts/login" />
+
+{% endif %}
