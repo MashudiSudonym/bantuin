@@ -1,14 +1,30 @@
+<!-- konsepnya seperti pada tokopedia,
+
+ketika user login maka user hanya dapat melihat sedikit info tentang user lain, namun user dapat melihat lengkap dari profilnya sendiri.
+ketika user tidak login maka user hanya dapat melihat sedikit info tentang profilnya sendiri, dan user lain. -->
+
 {% if user.is_authenticated %}
 
-<h1>ini halaman profil {{ username }}</h1>
+	{% if user.username == usrdata.username %}
 
-username : {{ username }} <br>
-email : {{ email }} <br>
-first name : {{ firstname }} <br>
-last name : {{ lastname }} <br>
+	<h1>ini halaman profil {{ usrdata.username }}</h1>
+	username : {{ usrdata.username }} <br>
+	email : {{ usrdata.email }} <br>
+	first name : {{ usrdata.first_name }} <br>
+	last name : {{ usrdata.last_name }} <br>
+
+	{% else %}
+
+	<h1>ini halaman profil {{ usrdata.username }}</h1>
+
+	username : {{ usrdata.username }} <br>
+
+	{% endif %}
 
 {% else %}
 
-<meta http-equiv="refresh" content="0; url=/accounts/login" />
+<h1>ini halaman profil {{ usrdata.username }}</h1>
+
+username : {{ usrdata.username }} <br>
 
 {% endif %}

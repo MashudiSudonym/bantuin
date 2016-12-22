@@ -1,13 +1,14 @@
-from django.shortcuts import render
+from django.http import HttpResponse
+from django.shortcuts import render, get_object_or_404 
 
-def index(request):
-	if request.user.is_authenticated() :
-		context = {
-			"username": request.user.username,
-			"email": request.user.email,
-			"firstname": request.user.first_name,
-			"lastname": request.user.last_name,
-		}
-	else :
-		context = {}
+from django.contrib.auth.models import User
+
+def index(request, username):
+	
+	usrname = get_object_or_404(User, username=username)
+
+	context = {
+		"usrdata": usrname,
+	}
+
 	return render(request, 'profil/profil.html', context)
