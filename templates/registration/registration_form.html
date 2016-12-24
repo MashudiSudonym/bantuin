@@ -8,7 +8,7 @@
 {% block content %}
 
 {% if request.user.is_authenticated %}
-    <meta http-equiv="refresh" content="0; url=/accounts/logout" />
+    <meta http-equiv="refresh" content="0; url={% url 'auth_logout' %}" />
 {% else %}
 
 
@@ -38,7 +38,7 @@
         {{ form.password2.errors }}
         </p>
 	    <button type="submit">Sign Up</button>
-	    <p class="message-login">Already registered? <a href="/accounts/login/">Sign In</a></p>
+	    <p class="message-login">Already registered? <a href="{% url 'auth_login' %}">Sign In</a></p>
   	</form>
 </div>
 

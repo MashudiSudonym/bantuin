@@ -24,14 +24,14 @@
                     </li>
                     {% if user.is_authenticated %}
                     <li>
-                        <a class="page-scroll" href="/accounts/logout/">Logout</a>
+                        <a class="page-scroll" href="{% url 'auth_logout' %}">Logout</a>
                     </li>
                     {% else %}
                     <li>
                         <a class="page-scroll" href="{% url 'registration_register' %}">Register</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="/accounts/login/">Login</a>
+                        <a class="page-scroll" href="{% url 'auth_login' %}">Login</a>
                     </li>
                     {% endif %}
                 </ul>

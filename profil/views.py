@@ -5,10 +5,10 @@ from django.contrib.auth.models import User
 
 def index(request, username):
 	
-	usrname = get_object_or_404(User, username=username)
+	usrdata = get_object_or_404(User, username=username)
 
 	context = {
-		"usrdata": usrname,
+		"usrdata": usrdata,
 	}
 
 	return render(request, 'profil/profil.html', context)
