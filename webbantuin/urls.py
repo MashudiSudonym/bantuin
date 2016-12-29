@@ -22,6 +22,7 @@ urlpatterns = [
 	url(r'^', include('home.urls')),
     url(r'^about/', include('about.urls')),
     url(r'^profil/', include('profil.urls')),
+    url(r'^dashboard/', include('dashboard.urls')),
     url(r'^accounts/', include('registration.backends.hmac.urls')),
 ]
 
