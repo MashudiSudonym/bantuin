@@ -6,10 +6,10 @@ from django.contrib.auth.models import User
 def index(request):
 	if request.user.is_authenticated():
 
-		queryset = User.objects.filter(username=request.user)
+		getusrname = User.objects.filter(username=request.user)
 		
 		context = {
-			"object_list": queryset,
+			"usrname_list": getusrname,
 		}
 
 		return render(request, 'dashboard/dashboard.html', context)

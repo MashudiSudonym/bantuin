@@ -1,7 +1,7 @@
 <h1>Dashboard</h1>
 
-{% for obj in object_list %}
-<a href="/profil/{{ obj.username }}">Profil</a><br><br>
+{% for usrn in usrname_list %}
+<a href="/profil/{{ usrn.username }}">Profil</a><br><br>
 {% endfor %}
 
 <a href="/about/">Tentang Bantuin</a><br><br>
