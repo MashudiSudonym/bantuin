@@ -47,7 +47,6 @@ INSTALLED_APPS = [
     'home',
     'about',
     'profil',
-    'dashboard',
 ]
 
 # crispy template pack

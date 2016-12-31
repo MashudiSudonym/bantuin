@@ -5,6 +5,8 @@ ketika user tidak login maka user hanya dapat melihat sedikit info tentang profi
 
 {% if user.is_authenticated %}
 
+	<a href="/">Home</a>
+
 	{% if user.username == usrdata.username %}
 
 	<h1>ini halaman profil {{ usrdata.username }}</h1>
