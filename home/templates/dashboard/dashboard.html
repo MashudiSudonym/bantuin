@@ -1,0 +1,9 @@
+<h1>Dashboard</h1>
+
+{% for usrn in usrname_list %}
+<a href="/profil/{{ usrn.username }}">Profil</a><br><br>
+{% endfor %}
+
+<a href="/about/">Tentang Bantuin</a><br><br>
+
+<a href="{% url 'auth_logout' %}">Logout</a>

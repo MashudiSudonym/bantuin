@@ -21,7 +21,7 @@ urlpatterns = [
     url(r'^ngademin/', admin.site.urls),
 	url(r'^', include('home.urls')),
     url(r'^about/', include('about.urls')),
-    url(r'^profil/', include('profil.urls')),
+    url(r'^profil/', include('profil.urls', namespace='profil')),
     url(r'^accounts/', include('registration.backends.hmac.urls')),
 ]
 
