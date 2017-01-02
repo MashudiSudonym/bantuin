@@ -130,7 +130,7 @@ WSGI_APPLICATION = 'webbantuin.wsgi.application'
 #     }
 # }
 
-# di production.py pakai database yg ini
+# di production.py pakai database yg ini, peduli amat dengan username dan password database -_-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
