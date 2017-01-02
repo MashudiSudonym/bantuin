@@ -1,12 +1,20 @@
-from django.shortcuts import render
-from django.contrib.auth.views import login as contrib_login, logout as contrib_logout
-from django.shortcuts import redirect
-from django.conf import settings
+from django.http import HttpResponse
+from django.shortcuts import render, get_object_or_404 
 
-
+from django.contrib.auth.models import User
 
 def index(request):
-	return render(request, 'home/home.html')
+	if request.user.is_authenticated():
+
+		getusrname = User.objects.filter(username=request.user)
+		
+		context = {
+			"usrname_list": getusrname,
+		}
+
+		return render(request, 'dashboard/dashboard.html', context)
+	else :
+		return render(request, 'home/home.html')
 
 def handler404(request):
     response = render(request, 'errors/404.html')

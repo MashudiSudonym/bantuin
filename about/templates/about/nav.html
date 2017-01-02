@@ -21,6 +21,11 @@
                     </li>
                     {% if user.is_authenticated %}
                     <li>
+                        {% for usrn in usrname_list %}
+                        <a class="page-scroll" href="/profil/{{ usrn.username }}">{{ usrn.username }}</a>
+                        {% endfor %}
+                    </li>
+                    <li>
                         <a class="page-scroll" href="{% url 'auth_logout' %}">Logout</a>
                     </li>
                     {% else %}
