@@ -24,6 +24,8 @@ Konsep bantuin adalah guna memudahkan masyarakat mencari bantuan terhadap masala
 
 # Pasang Bantuin ke localhost
 
+catatan : buka dan edit file requirements.txt, hapus paket psycopg2==2.6.2 kemudian simpan dan lakukan installasi seperti panduan ini, jika ingin deploy ke heroku kembalikan lagi psycopg2==2.6.2 setelah install paket agar tidak mengalami masalah saat mencoba deploy ke heroku.
+
 Copy source code
 
 > git clone https://github.com/MashudiSudonym/bantuin.git
@@ -39,6 +41,7 @@ catatan : buka dan edit file requirements.txt, hapus paket psycopg2==2.6.2 kemud
 * buat file bernama local.py di folder webbantuin/settings dan copas isinya dari file production.py yang ada di folder yg sama
 * setelah copas ke local.py, pada file local.py cari DEBUG = False dan ganti dengan DEBUG = True
 * tetap pada file local.py, ganti ALLOWED_HOSTS = ['*'] dengan ALLOWED_HOSTS = []
+* perhatikan juga beberapa catatan komentar pada file production.py agar tidak bingung dengan alur production.py saat menyalinnya ke local.py
 * simpan dan jalankan pada local server dengan perintah :
 
 > python manage.py runserver
