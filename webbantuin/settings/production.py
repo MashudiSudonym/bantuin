@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'home',
     'about',
     'profil',
+    'jasa',
 ]
 
 # crispy template pack

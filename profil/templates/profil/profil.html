@@ -7,28 +7,48 @@ ketika user tidak login maka user hanya dapat melihat sedikit info tentang profi
 
 	<a href="/">Home</a>
 
-	{% if user.username == usrdata.username %}
+	{% if user.username == getusrname.username %}
 
-	<h1>ini halaman profil {{ usrdata.username }}</h1>
-	username : {{ usrdata.username }} <br>
-	email : {{ usrdata.email }} <br>
-	first name : {{ usrdata.first_name }} <br>
-	last name : {{ usrdata.last_name }} <br>
-	last login : {{ usrdata.last_login }} <br>
-	date joined : {{ usrdata.date_joined }} <br>
+	<h1>ini halaman profil {{ getusrname.username }}</h1>
+	username : {{ getusrname.username }} <br>
+	email : <a href="mailto:{{ getusrname.email }}">{{ getusrname.email }}</a> <br>
+	display name : {{ getusrname.first_name }} {{ getusrname.last_name }} <br>
+	tanggal lahir : {{ getprofil.tgl_lahir }} <br>
+	jenis kelamin : {{ getprofil.jenis_kelamin }} <br>
+	alamat : {{ getprofil.alamat }} <br> 
+	desa : {{ getprofil.desa }} <br>
+	kecamatan : {{ getprofil.kecamatan }} <br>
+	kabupaten : {{ getprofil.kabupaten }} <br>
+	provinsi : {{ getprofil.provinsi }} <br>
+	negara : {{ getprofil.negara }} <br>
+	phone : {{ getprofil.phone }} <br>
+	self introduction : {{ getprofil.self_introduction }} <br>
+	website : <a href="{{ getprofil.website }}" target="_blank">{{ getprofil.website }}</a> <br>
+	keahlian : {{ getprofil.keahlian }} <br>
+	last login : {{ getusrname.last_login }} <br>
+	date joined : {{ getusrname.date_joined }} <br>
 
 	{% else %}
 
-	<h1>ini halaman profil {{ usrdata.username }}</h1>
+	<h1>ini halaman profil {{ getusrname.username }}</h1>
 
-	username : {{ usrdata.username }} <br>
+	username : {{ getusrname.username }} <br>
+	display name : {{ getusrname.first_name }} {{ getusrname.last_name }} <br>
+	tanggal lahir : {{ getprofil.tgl_lahir }} <br>
+	jenis kelamin : {{ getprofil.jenis_kelamin }} <br>
+	self introduction : {{ getprofil.self_introduction }} <br>
+	date joined : {{ getusrname.date_joined }} <br>
 
 	{% endif %}
 
 {% else %}
 
-<h1>ini halaman profil {{ usrdata.username }}</h1>
+<h1>ini halaman profil {{ getusrname.username }}</h1>
 
-username : {{ usrdata.username }} <br>
-
+username : {{ getusrname.username }} <br>
+display name : {{ getusrname.first_name }} {{ getusrname.last_name }} <br>
+tanggal lahir : {{ getprofil.tgl_lahir }} <br>
+jenis kelamin : {{ getprofil.jenis_kelamin }} <br>
+self introduction : {{ getprofil.self_introduction }} <br>
+date joined : {{ getusrname.date_joined }} <br>
 {% endif %}
