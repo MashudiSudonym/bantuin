@@ -10,6 +10,7 @@ ketika user tidak login maka user hanya dapat melihat sedikit info tentang profi
 	{% if user.username == getusrname.username %}
 
 	<h1>ini halaman profil {{ getusrname.username }}</h1>
+	<img src="../../media/{{ getprofil.avatar }}" style="max-width: 25%;"><br>
 	username : {{ getusrname.username }} <br>
 	email : <a href="mailto:{{ getusrname.email }}">{{ getusrname.email }}</a> <br>
 	display name : {{ getusrname.first_name }} {{ getusrname.last_name }} <br>

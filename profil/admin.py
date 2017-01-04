@@ -5,6 +5,7 @@ from .models import *
 class ProfilModelAdmin(admin.ModelAdmin):
 	list_display = [
 		"user",
+		"avatar",
 		"tgl_lahir", 
 		"jenis_kelamin",
 		"alamat",

@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^jet/', include('jet.urls', 'jet')),  # Django JET URLS
@@ -23,7 +25,7 @@ urlpatterns = [
     url(r'^about/', include('about.urls')),
     url(r'^profil/', include('profil.urls', namespace='profil')),
     url(r'^accounts/', include('registration.backends.hmac.urls')),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 handler404 = 'home.views.handler404'
 handler500 = 'home.views.handler500'
