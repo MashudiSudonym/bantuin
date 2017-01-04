@@ -187,6 +187,10 @@ STATICFILES_DIRS = (
     'static/'
 )
 
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/')
+
 # masa berlaku link aktivasi dari registrasi
 ACCOUNT_ACTIVATION_DAYS = 7
 
