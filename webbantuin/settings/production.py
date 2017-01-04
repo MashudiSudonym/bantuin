@@ -182,9 +182,9 @@ USE_TZ = True
 STATIC_ROOT = 'staticfiles'
 STATIC_URL = '/static/'
 
-# untuk local.py beri komentar untuk MEDIA_URL dan MEDIA_ROOT
+# # untuk local.py beri komentar untuk MEDIA_URL dan MEDIA_ROOT
 
-MEDIA_URL = '/media/'
+# MEDIA_URL = '/media/'
 
 # MEDIA_ROOT = 'os.path.join(BASE_DIR, 'static/')
 
@@ -195,9 +195,9 @@ STATICFILES_DIRS = (
 
 # jika pada local.py hapus komentar untuk MEDIA_URL dan MEDIA_ROOT
 
-# MEDIA_URL = '/media/'
+MEDIA_URL = '/media/'
 
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'static/')
+MEDIA_ROOT = STATICFILES_DIRS
 
 # masa berlaku link aktivasi dari registrasi
 ACCOUNT_ACTIVATION_DAYS = 7
