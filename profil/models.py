@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 
 class Profil(models.Model):
 	user = models.ForeignKey(User, related_name='user')
-	avatar = models.ImageField(upload_to='upload', blank=True)
+	avatar = models.ImageField(upload_to='img', blank=True)
 	tgl_lahir = models.DateField()
 	JENIS_KELAMIN = (
 			('Pria', 'Pria'),

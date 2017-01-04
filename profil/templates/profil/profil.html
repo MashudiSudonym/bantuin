@@ -32,7 +32,7 @@ ketika user tidak login maka user hanya dapat melihat sedikit info tentang profi
 	{% else %}
 
 	<h1>ini halaman profil {{ getusrname.username }}</h1>
-
+	<img src="../../media/{{ getprofil.avatar }}" style="max-width: 25%;"><br>
 	username : {{ getusrname.username }} <br>
 	display name : {{ getusrname.first_name }} {{ getusrname.last_name }} <br>
 	tanggal lahir : {{ getprofil.tgl_lahir }} <br>
@@ -45,7 +45,7 @@ ketika user tidak login maka user hanya dapat melihat sedikit info tentang profi
 {% else %}
 
 <h1>ini halaman profil {{ getusrname.username }}</h1>
-
+<img src="../../media/{{ getprofil.avatar }}" style="max-width: 25%;"><br>
 username : {{ getusrname.username }} <br>
 display name : {{ getusrname.first_name }} {{ getusrname.last_name }} <br>
 tanggal lahir : {{ getprofil.tgl_lahir }} <br>
