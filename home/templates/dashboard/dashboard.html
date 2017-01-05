@@ -1,9 +1,19 @@
-<h1>Dashboard</h1>
+<!--load base dashboardlayout-->
+{% extends 'dashboard/base.html' %}
 
-{% for usrn in usrname_list %}
-<a href="/profil/{{ usrn.username }}">Profil</a><br><br>
-{% endfor %}
+<!--judul-->
+{% block title %} Bantuin {% endblock %}
 
-<a href="/about/">Tentang Bantuin</a><br><br>
+<!--konten-->
+{% block content %}
 
-<a href="{% url 'auth_logout' %}">Logout</a>
+<div id="page-wrapper">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Dashboard</h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>            
+</div>
+<!-- /#page-wrapper -->
+{% endblock content %}

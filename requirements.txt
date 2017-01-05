@@ -1,6 +1,6 @@
 Django==1.10.3
 django-registration==2.1.2
-django-crispy-forms==1.6.1
+django-bootstrap3==7.1.0
 gunicorn==19.6.0
 whitenoise==3.2.2
 django-jet==1.0.4

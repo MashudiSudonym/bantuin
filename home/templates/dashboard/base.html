@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!--loadtitle-->
+    <title>{% block title %}{% endblock %}</title>
+
+    <!--load main css and more-->
+    {% include "dashboard/head.html" %}
+
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+
+            {% include "dashboard/nav.html" %}
+            {% include "dashboard/sidebar.html" %}
+            
+        </nav>
+
+    <!--load content-->
+    {% block content %}{% endblock%}
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!--load main js-->
+    {% include "dashboard/js.html" %}
+
+</body>
+
+</html>

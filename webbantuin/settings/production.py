@@ -43,15 +43,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'crispy_forms',
     'home',
     'about',
     'profil',
     'jasa',
 ]
-
-# crispy template pack
-CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 # jet admin template pack
 JET_DEFAULT_THEME = 'default'
@@ -191,7 +187,7 @@ STATICFILES_DIRS = (
 
 MEDIA_URL = '/media/'
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'static/')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/img/')
 
 # masa berlaku link aktivasi dari registrasi
 ACCOUNT_ACTIVATION_DAYS = 7
