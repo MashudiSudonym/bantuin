@@ -10,7 +10,9 @@ ketika user tidak login maka user hanya dapat melihat sedikit info tentang profi
 	{% if user.username == getusrname.username %}
 
 	<h1>ini halaman profil {{ getusrname.username }}</h1>
-	<img src="../../media/{{ getprofil.avatar }}" style="max-width: 25%;"><br>
+	{% if getprofil.avatar.url != None %}
+	<img src="{{ getprofil.avatar.url }}" style="max-width: 25%;"><br>
+	{% endif %}
 	username : {{ getusrname.username }} <br>
 	email : <a href="mailto:{{ getusrname.email }}">{{ getusrname.email }}</a> <br>
 	display name : {{ getusrname.first_name }} {{ getusrname.last_name }} <br>
@@ -27,12 +29,16 @@ ketika user tidak login maka user hanya dapat melihat sedikit info tentang profi
 	website : <a href="{{ getprofil.website }}" target="_blank">{{ getprofil.website }}</a> <br>
 	keahlian : {{ getprofil.keahlian }} <br>
 	last login : {{ getusrname.last_login }} <br>
-	date joined : {{ getusrname.date_joined }} <br>
+	date joined : {{ getusrname.date_joined }} <br><br><br>
+
+	<a href="/profil/edit/{{ getusrname.username }}">edit profil</a>
 
 	{% else %}
 
 	<h1>ini halaman profil {{ getusrname.username }}</h1>
-	<img src="../../media/{{ getprofil.avatar }}" style="max-width: 25%;"><br>
+	{% if getprofil.avatar.url != None %}
+	<img src="{{ getprofil.avatar.url }}" style="max-width: 25%;"><br>
+	{% endif %}
 	username : {{ getusrname.username }} <br>
 	display name : {{ getusrname.first_name }} {{ getusrname.last_name }} <br>
 	tanggal lahir : {{ getprofil.tgl_lahir }} <br>
@@ -45,7 +51,9 @@ ketika user tidak login maka user hanya dapat melihat sedikit info tentang profi
 {% else %}
 
 <h1>ini halaman profil {{ getusrname.username }}</h1>
-<img src="../../media/{{ getprofil.avatar }}" style="max-width: 25%;"><br>
+{% if getprofil.avatar.url != None %}
+<img src="{{ getprofil.avatar.url }}" style="max-width: 25%;"><br>
+{% endif %}
 username : {{ getusrname.username }} <br>
 display name : {{ getusrname.first_name }} {{ getusrname.last_name }} <br>
 tanggal lahir : {{ getprofil.tgl_lahir }} <br>

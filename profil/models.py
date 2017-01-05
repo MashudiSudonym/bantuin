@@ -3,9 +3,12 @@ from __future__ import unicode_literals
 from django.db import models
 from django.contrib.auth.models import User
 
+def upload_location(instance, filename):
+	return "%s/%s" %(instance.user, filename)
+
 class Profil(models.Model):
 	user = models.ForeignKey(User, related_name='user')
-	avatar = models.ImageField(upload_to='img', blank=True)
+	avatar = models.ImageField(upload_to=upload_location, blank=True)
 	tgl_lahir = models.DateField()
 	JENIS_KELAMIN = (
 			('Pria', 'Pria'),

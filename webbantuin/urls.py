@@ -25,7 +25,10 @@ urlpatterns = [
     url(r'^about/', include('about.urls')),
     url(r'^profil/', include('profil.urls', namespace='profil')),
     url(r'^accounts/', include('registration.backends.hmac.urls')),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 handler404 = 'home.views.handler404'
 handler500 = 'home.views.handler500'
