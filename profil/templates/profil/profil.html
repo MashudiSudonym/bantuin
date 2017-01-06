@@ -1,63 +1,280 @@
+<!--load base profillayout-->
+{% extends 'profil/base.html' %}
+
+<!--judul-->
+{% block title %} {{ getusrname.username }} Profil | Bantuin {% endblock %}
+
 <!-- konsepnya seperti pada tokopedia,
 
 ketika user login maka user hanya dapat melihat sedikit info tentang user lain, namun user dapat melihat lengkap dari profilnya sendiri.
 ketika user tidak login maka user hanya dapat melihat sedikit info tentang profilnya sendiri, dan user lain. -->
 
-{% if user.is_authenticated %}
+<!--konten-->
+{% block content %}
 
-	<a href="/">Home</a>
+{% if user.is_authenticated %}
 
 	{% if user.username == getusrname.username %}
 
-	<h1>ini halaman profil {{ getusrname.username }}</h1>
-	{% if getprofil.avatar.url != None %}
-	<img src="{{ getprofil.avatar.url }}" style="max-width: 25%;"><br>
-	{% endif %}
-	username : {{ getusrname.username }} <br>
-	email : <a href="mailto:{{ getusrname.email }}">{{ getusrname.email }}</a> <br>
-	display name : {{ getusrname.first_name }} {{ getusrname.last_name }} <br>
-	tanggal lahir : {{ getprofil.tgl_lahir }} <br>
-	jenis kelamin : {{ getprofil.jenis_kelamin }} <br>
-	alamat : {{ getprofil.alamat }} <br> 
-	desa : {{ getprofil.desa }} <br>
-	kecamatan : {{ getprofil.kecamatan }} <br>
-	kabupaten : {{ getprofil.kabupaten }} <br>
-	provinsi : {{ getprofil.provinsi }} <br>
-	negara : {{ getprofil.negara }} <br>
-	phone : {{ getprofil.phone }} <br>
-	self introduction : {{ getprofil.self_introduction }} <br>
-	website : <a href="{{ getprofil.website }}" target="_blank">{{ getprofil.website }}</a> <br>
-	keahlian : {{ getprofil.keahlian }} <br>
-	last login : {{ getusrname.last_login }} <br>
-	date joined : {{ getusrname.date_joined }} <br><br><br>
+	<div id="page-wrapper" style="margin-top:50px">
+	    <div class="row">
+	        <div class="col-lg-12">
+	            <h1 class="page-header">Hi, {{ getusrname.username }}</h1>
+	        </div>
+	    </div>
+	    <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            Perkenalkan saya {{ getusrname.first_name }} {{ getusrname.last_name }}
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                	<p>
+	                                   	{% if getprofil.avatar.url != None %}
+										<img src="{{ getprofil.avatar.url }}" class="img-responsive img-thumbnail img-rounded center-block">
+										{% else %}
+										<img src="/static/img/users.svg" class="img-responsive img-thumbnail img-rounded center-block">
+										{% endif %}
+									</p>
 
-	<a href="/profil/edit/{{ getusrname.username }}">edit profil</a>
+									<a href="/profil/edit/{{ getusrname.username }}" class="btn btn-warning btn-lg btn-block" >edit profil</a>
+                                </div>
+                                <!-- /.col-lg-6 (nested) -->
+                                <div class="col-lg-7"><hr>
+                                	<p class="lead">
+                                		{{ getprofil.self_introduction }}
+                                	</p><hr>
+                                	<div class="table-responsive">
+										<table class="table table-striped">
+											<tr>
+												<td><strong>Display Name : </strong></td>
+												<td>{{ getusrname.first_name }} {{ getusrname.last_name }} </td>
+											</tr>
+											<tr>
+												<td><strong>User Name : </strong></td>
+												<td>{{ getusrname.username }}</td>
+											</tr>
+											<tr>
+												<td><strong>Bahasa : </strong></td>
+												<td>{{ getprofil.bahasa }}</td>
+											</tr>
+											<tr>
+												<td><strong>Keahlian : </strong></td>
+												<td>{{ getprofil.keahlian }}</td>
+											</tr>
+											<tr>
+												<td><strong>Tanggal Lahir : </strong></td>
+												<td>{{ getprofil.tgl_lahir }}</td>
+											</tr>
+											<tr>
+												<td><strong>Jenis Kelamin : </strong></td>
+												<td>{{ getprofil.jenis_kelamin }}</td>
+											</tr>
+											<tr>
+												<td><strong>Date Joined : </strong></td>
+												<td>{{ getusrname.date_joined }}</td>
+											</tr>
+											<tr>
+												<td><strong>Alamat : </strong></td>
+												<td>{{ getprofil.alamat }}</td>
+											</tr>
+											<tr>
+												<td><strong>Desa : </strong></td>
+												<td>{{ getprofil.desa }}</td>
+											</tr>
+											<tr>
+												<td><strong>Kecamatan : </strong></td>
+												<td>{{ getprofil.kecamatan }}</td>
+											</tr>
+											<tr>
+												<td><strong>Kabupaten / Kota : </strong></td>
+												<td>{{ getprofil.kabupaten }}</td>
+											</tr>
+											<tr>
+												<td><strong>Provinsi : </strong></td>
+												<td>{{ getprofil.provinsi }}</td>
+											</tr>
+											<tr>
+												<td><strong>Negara : </strong></td>
+												<td>{{ getprofil.negara }}</td>
+											</tr>
+											<tr>
+												<td><strong>No.Telefon / HP : </strong></td>
+												<td>{{ getprofil.phone }}</td>
+											</tr>
+											<tr>
+												<td><strong>Website : </strong></td>
+												<td><a href="{{ getprofil.website }}">{{ getprofil.website }}</a></td>
+											</tr>
+										</table>
+									</div>
+                                </div>
+                                <!-- /.col-lg-6 (nested) -->
+                            </div>
+                            <!-- /.row (nested) -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->        
+	</div>
+	<!-- /#page-wrapper -->
 
 	{% else %}
 
-	<h1>ini halaman profil {{ getusrname.username }}</h1>
-	{% if getprofil.avatar.url != None %}
-	<img src="{{ getprofil.avatar.url }}" style="max-width: 25%;"><br>
-	{% endif %}
-	username : {{ getusrname.username }} <br>
-	display name : {{ getusrname.first_name }} {{ getusrname.last_name }} <br>
-	tanggal lahir : {{ getprofil.tgl_lahir }} <br>
-	jenis kelamin : {{ getprofil.jenis_kelamin }} <br>
-	self introduction : {{ getprofil.self_introduction }} <br>
-	date joined : {{ getusrname.date_joined }} <br>
+	<div id="page-wrapper" style="margin-top:30px">
+	    <div class="row">
+	        <div class="col-lg-12">
+	            <h1 class="page-header">Hi, {{ getusrname.username }}</h1>
+	        </div>
+	    </div>
+	    <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            Perkenalkan saya {{ getusrname.first_name }} {{ getusrname.last_name }}
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                	<p>
+	                                   	{% if getprofil.avatar.url != None %}
+										<img src="{{ getprofil.avatar.url }}" class="img-responsive img-thumbnail img-rounded center-block">
+										{% else %}
+										<img src="/static/img/users.svg" class="img-responsive img-thumbnail img-rounded center-block">
+										{% endif %}
+									</p>
+                                </div>
+                                <!-- /.col-lg-6 (nested) -->
+                                <div class="col-lg-7"><hr>
+                                	<p class="lead">
+                                		{{ getprofil.self_introduction }}
+                                	</p><hr>
+                                	<div class="table-responsive">
+										<table class="table table-striped">
+											<tr>
+												<td><strong>Display Name : </strong></td>
+												<td>{{ getusrname.first_name }} {{ getusrname.last_name }} </td>
+											</tr>
+											<tr>
+												<td><strong>User Name : </strong></td>
+												<td>{{ getusrname.username }}</td>
+											</tr>
+											<tr>
+												<td><strong>Tanggal Lahir : </strong></td>
+												<td>{{ getprofil.tgl_lahir }}</td>
+											</tr>
+											<tr>
+												<td><strong>Jenis Kelamin : </strong></td>
+												<td>{{ getprofil.jenis_kelamin }}</td>
+											</tr>
+											<tr>
+												<td><strong>Date Joined : </strong></td>
+												<td>{{ getusrname.date_joined }}</td>
+											</tr>
+											<tr>
+												<td><strong>Last Login : </strong></td>
+												<td>{{ getusrname.last_login }}</td>
+											</tr>
+											<tr>
+												<td><strong>Date Joined : </strong></td>
+												<td>{{ getusrname.date_joined }}</td>
+											</tr>
+										</table>
+									</div>
+                                </div>
+                                <!-- /.col-lg-6 (nested) -->
+                            </div>
+                            <!-- /.row (nested) -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->        
+	</div>
+	<!-- /#page-wrapper -->
 
 	{% endif %}
 
 {% else %}
 
-<h1>ini halaman profil {{ getusrname.username }}</h1>
-{% if getprofil.avatar.url != None %}
-<img src="{{ getprofil.avatar.url }}" style="max-width: 25%;"><br>
+	<div id="page-wrapper" style="margin-top:30px">
+	    <div class="row">
+	        <div class="col-lg-12">
+	            <h1 class="page-header">Hi, {{ getusrname.username }}</h1>
+	        </div>
+	    </div>
+	    <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            Perkenalkan saya {{ getusrname.first_name }} {{ getusrname.last_name }}
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                	<p>
+	                                   	{% if getprofil.avatar.url != None %}
+										<img src="{{ getprofil.avatar.url }}" class="img-responsive img-thumbnail img-rounded center-block">
+										{% else %}
+										<img src="/static/img/users.svg" class="img-responsive img-thumbnail img-rounded center-block">
+										{% endif %}
+									</p>
+                                </div>
+                                <!-- /.col-lg-6 (nested) -->
+                                <div class="col-lg-7"><hr>
+                                	<p class="lead">
+                                		{{ getprofil.self_introduction }}
+                                	</p><hr>
+                                	<div class="table-responsive">
+										<table class="table table-striped">
+											<tr>
+												<td><strong>Display Name : </strong></td>
+												<td>{{ getusrname.first_name }} {{ getusrname.last_name }} </td>
+											</tr>
+											<tr>
+												<td><strong>User Name : </strong></td>
+												<td>{{ getusrname.username }}</td>
+											</tr>
+											<tr>
+												<td><strong>Tanggal Lahir : </strong></td>
+												<td>{{ getprofil.tgl_lahir }}</td>
+											</tr>
+											<tr>
+												<td><strong>Jenis Kelamin : </strong></td>
+												<td>{{ getprofil.jenis_kelamin }}</td>
+											</tr>
+											<tr>
+												<td><strong>Date Joined : </strong></td>
+												<td>{{ getusrname.date_joined }}</td>
+											</tr>
+										</table>
+									</div>
+                                </div>
+                                <!-- /.col-lg-6 (nested) -->
+                            </div>
+                            <!-- /.row (nested) -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->        
+	</div>
+	<!-- /#page-wrapper -->
+
 {% endif %}
-username : {{ getusrname.username }} <br>
-display name : {{ getusrname.first_name }} {{ getusrname.last_name }} <br>
-tanggal lahir : {{ getprofil.tgl_lahir }} <br>
-jenis kelamin : {{ getprofil.jenis_kelamin }} <br>
-self introduction : {{ getprofil.self_introduction }} <br>
-date joined : {{ getusrname.date_joined }} <br>
-{% endif %}
+{% endblock content %}

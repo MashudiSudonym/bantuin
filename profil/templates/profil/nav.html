@@ -8,26 +8,35 @@
                 <a class="navbar-brand" href="/" style="font-size: 28px"><strong>Bantuin</strong></a>
             </div>
             <!-- /.navbar-header -->
-
             <ul class="nav navbar-top-links navbar-right">
                 <!-- /.dropdown -->
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        {% for usrprofil in profil_list %}
-                        <img src="{{ usrprofil.avatar.url }}" class="img-circle" alt="User Image" style="height: 25px;">
-                        {% endfor %}
+                        {% if user.is_authenticated %}
+                        {% if getavatarusr.avatar.url != None %}
+                        <img src="{{ getavatarusr.avatar.url }}" class="img-circle" alt="User Image" style="height: 25px;">
+                        {% endif %}
                         <i class="fa fa-caret-down"></i>
+                        {% else %}
+                        <img src="/static/img/users.svg" class="img-circle" alt="User Image" style="height: 25px;">
+                        
+                        <i class="fa fa-caret-down"></i>
+                        {% endif %}
                     </a>
                     <ul class="dropdown-menu dropdown-user">
+                        {% if user.is_authenticated %}
                         <li>
-                            {% for usrn in usrname_list %}
-                            <a href="/profil/{{ usrn.username }}"><i class="fa fa-user fa-fw"></i> {{ usrn.username }}</a>
-                            {% endfor %}
+                            <a href="/profil/{{ user.username }}"><i class="fa fa-user fa-fw"></i> {{ user.username }}</a>
                         </li>
                         <li class="divider"></li>
                         <li>
                             <a href="{% url 'auth_logout' %}"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
+                        {% else %}
+                        <li>
+                            <a href="{% url 'auth_login' %}"><i class="fa fa-sign-out fa-fw"></i> Login</a>
+                        </li>
+                        {% endif %}
                     </ul>
                     <!-- /.dropdown-user -->
                 </li>

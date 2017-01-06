@@ -14,9 +14,12 @@ def index(request, username):
 
 	getprofil = Profil.objects.filter(user__username=username).first()
 
+	getavatarusr = Profil.objects.filter(user__username=request.user.username).first()
+
 	context = {
 		"getusrname": getusrname,
 		"getprofil": getprofil,
+		"getavatarusr": getavatarusr,
 	}
 
 	return render(request, 'profil/profil.html', context)
