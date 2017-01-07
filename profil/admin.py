@@ -18,6 +18,11 @@ class ProfilModelAdmin(admin.ModelAdmin):
 		"phone",
 		"self_introduction",
 		"website",
+		"fb",
+		"twitter",
+		"googleplus",
+		"status_pekerja",
+		"hobi",
 		"bahasa",
 		"keahlian",
 		]
