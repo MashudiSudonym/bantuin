@@ -13,15 +13,13 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         {% if user.is_authenticated %}
-                        {% if getavatarusr.avatar.url != None %}
-                        <img src="{{ getavatarusr.avatar.url }}" class="img-circle" alt="User Image" style="height: 25px;">
+                            {% if getavatarusr.avatar.url != None %}
+                            <img src="{{ getavatarusr.avatar.url }}" class="img-circle" alt="User Image" style="height: 20px;">
+                            {% else %}
+                            <img src="/static/img/users.svg" class="img-circle" alt="User Image" style="height: 20px;">
+                            {% endif %}
                         {% endif %}
                         <i class="fa fa-caret-down"></i>
-                        {% else %}
-                        <img src="/static/img/users.svg" class="img-circle" alt="User Image" style="height: 25px;">
-                        
-                        <i class="fa fa-caret-down"></i>
-                        {% endif %}
                     </a>
                     <ul class="dropdown-menu dropdown-user">
                         {% if user.is_authenticated %}
