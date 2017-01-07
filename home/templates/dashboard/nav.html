@@ -14,7 +14,7 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         {% for usrprofil in profil_list %}
-                        {% if usrprofil.user != False %}
+                        {% if usrprofil.user == None %}
                             {% if usrprofil.avatar.url != None %}
                             <img src="{{ usrprofil.avatar.url }}" class="img-circle" alt="User Image" style="height: 20px;">
                             {% else %}
