@@ -106,8 +106,30 @@ ketika user tidak login maka user hanya dapat melihat sedikit info tentang profi
 												<td>{{ getprofil.phone }}</td>
 											</tr>
 											<tr>
+												<td><strong>Status Pekerja : </strong></td>
+												<td>
+													{% if getprofil.status_pekerja == True %}
+														Tukang Bantuin
+													{% else %}
+														Bukan Tukang Bantuin
+													{% endif %}
+												</td>
+											</tr>
+											<tr>
 												<td><strong>Website : </strong></td>
 												<td><a href="{{ getprofil.website }}">{{ getprofil.website }}</a></td>
+											</tr>
+											<tr>
+												<td><strong>Facebook : </strong></td>
+												<td><a href="{{ getprofil.fb }}">{{ getprofil.fb }}</a></td>
+											</tr>
+											<tr>
+												<td><strong>Twitter : </strong></td>
+												<td><a href="{{ getprofil.twitter }}">{{ getprofil.twitter }}</a></td>
+											</tr>
+											<tr>
+												<td><strong>G+ : </strong></td>
+												<td><a href="{{ getprofil.googleplus }}">{{ getprofil.googleplus }}</a></td>
 											</tr>
 										</table>
 									</div>

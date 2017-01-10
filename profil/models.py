@@ -29,6 +29,5 @@ class Profil(models.Model):
 	twitter = models.URLField(blank=True)
 	googleplus = models.URLField(blank=True)
 	status_pekerja = models.BooleanField(default=False)
-	hobi = models.CharField(max_length=150, blank=True)
 	bahasa = models.CharField(max_length=150, blank=True)
 	keahlian = models.TextField(blank=True)

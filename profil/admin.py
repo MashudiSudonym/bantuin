@@ -22,7 +22,6 @@ class ProfilModelAdmin(admin.ModelAdmin):
 		"twitter",
 		"googleplus",
 		"status_pekerja",
-		"hobi",
 		"bahasa",
 		"keahlian",
 		]

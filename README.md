@@ -15,9 +15,10 @@ Konsep bantuin adalah guna memudahkan masyarakat mencari bantuan terhadap masala
 
 ### Requirement 
 
+* python-3.5.2
 * Django 1.10.3
 * django-registration 2.1.2
-* django-crispy-forms 1.6.1
+* django-bootstrap3==7.1.0
 * gunicorn 19.6.0
 * whitenoise 3.2.2
 * django-jet 1.0.4
@@ -34,7 +35,6 @@ Install paket yang dibutuhkan
 
 > pip install -r requirements.txt
 
-catatan : buka dan edit file requirements.txt, hapus paket psycopg2==2.6.2 kemudian simpan dan lakukan installasi seperti panduan di atas.
 
 # Menjalankan Bantuin di localhost
 
