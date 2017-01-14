@@ -13,6 +13,8 @@ Konsep bantuin adalah guna memudahkan masyarakat mencari bantuan terhadap masala
 
 ## Lingkungan Development / packages
 
+Kami asumsikan kita sudah mengetahui tentang virtualenv.
+
 ### Requirement 
 
 * python-3.5.2
@@ -38,11 +40,9 @@ Install paket yang dibutuhkan
 
 # Menjalankan Bantuin di localhost
 
-* buat file bernama local.py di folder webbantuin/settings dan copas isinya dari file production.py yang ada di folder yg sama
-* setelah copas ke local.py, pada file local.py cari DEBUG = False dan ganti dengan DEBUG = True
-* tetap pada file local.py, ganti ALLOWED_HOSTS = ['*'] dengan ALLOWED_HOSTS = []
-* perhatikan juga beberapa catatan komentar pada file production.py agar tidak bingung dengan alur production.py saat menyalinnya ke local.py
-* simpan dan jalankan pada local server dengan perintah :
+* Buka folder webbantuin/settings
+* Rename bak.local.py menjadi local.py
+* Jalankan pada local server dengan perintah :
 
 > python manage.py runserver
 
