@@ -20,6 +20,7 @@ class ProfilForm(ModelForm):
 			"phone",
 			"self_introduction",
 			"website",
+			"status_pekerja",
 			"bahasa",
 			"keahlian",
 			]
@@ -37,6 +38,7 @@ class ProfilForm(ModelForm):
 			'phone': "Nomor Telefon / HP",
 			'self_introduction': "Tentang Saya",
 			'website': "Website",
+			'status_pekerja': "Anda bisa memberi Bantuan ? ",
 			'bahasa': "Bahasa Utama",
 			'keahlian': "Keahlian",
 		}

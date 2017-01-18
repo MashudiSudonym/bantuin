@@ -50,6 +50,7 @@ class ProfilModelAdmin(admin.ModelAdmin):
 		"negara",
 		]
 	search_fields = ["user__username"]
+	
 	class Meta:
 		model = Profil
 
