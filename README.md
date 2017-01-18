@@ -1,5 +1,8 @@
 # Bantuin
-Bantuin adalah projek mata kuliah RPL 2.
+
+Bantuin berawal dari projek mata kuliah RPL 2, yang kemudian tetap kami kembangkan menjadi kode sumber untuk jenis aplikasi Market Place berbasis Django.
+
+Kami berharap dengan kode sumber ini dapat membantu teman-teman untuk belajar tentang Django, dan mengembangkan produk yang memiliki konsep yang sama.
 
 Konsep bantuin adalah guna memudahkan masyarakat mencari bantuan terhadap masalah teknis yang sedang dialami semisal saat membutuhkan bantuan untuk servis peralatan elektronik, menjahit baju, sampai menjari jasa tukang pijat.
 
@@ -20,7 +23,7 @@ Kami asumsikan kita sudah mengetahui tentang virtualenv.
 * python-3.5.2
 * Django 1.10.3
 * django-registration 2.1.2
-* django-bootstrap3==7.1.0
+* django-bootstrap3 7.1.0
 * gunicorn 19.6.0
 * whitenoise 3.2.2
 * django-jet 1.0.4
