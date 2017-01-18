@@ -75,7 +75,11 @@ ketika user tidak login maka user hanya dapat melihat sedikit info tentang profi
 											</tr>
 											<tr>
 												<td><strong>Hobi : </strong></td>
-												<td>{{ getprofil.Hobi }}</td>
+												<td>
+												{% for hobi in gethobi %}
+													{{hobi.namahobi}},
+												{% endfor %}
+												</td>
 											</tr>
 											<tr>
 												<td><strong>Date Joined : </strong></td>
