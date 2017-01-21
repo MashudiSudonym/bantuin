@@ -41,6 +41,7 @@ ketika user tidak login maka user hanya dapat melihat sedikit info tentang profi
 									</p>
 
 									<a href="/profil/edit/{{ getusrname.username }}" class="btn btn-warning btn-lg btn-block" ><i class="fa fa-pencil fa-fw"></i> Edit Profil</a>
+									<a href="{% url 'auth_password_change' %}" class="btn btn-danger btn-lg btn-block" ><i class="fa fa-pencil fa-fw"></i> Ubah Password</a>
                                 </div>
                                 <!-- /.col-lg-6 (nested) -->
                                 <div class="col-lg-7"><hr>
@@ -72,14 +73,6 @@ ketika user tidak login maka user hanya dapat melihat sedikit info tentang profi
 											<tr>
 												<td><strong>Jenis Kelamin : </strong></td>
 												<td>{{ getprofil.jenis_kelamin }}</td>
-											</tr>
-											<tr>
-												<td><strong>Hobi : </strong></td>
-												<td>
-												{% for hobi in gethobi %}
-													{{hobi.namahobi}},
-												{% endfor %}
-												</td>
 											</tr>
 											<tr>
 												<td><strong>Date Joined : </strong></td>
@@ -116,12 +109,12 @@ ketika user tidak login maka user hanya dapat melihat sedikit info tentang profi
 											<tr>
 												<td><strong>Status Pekerja : </strong></td>
 												<td>
-													{% if getprofil.status_pekerja == True %}
-														Tukang Bantuin
-													{% else %}
-														Bukan Tukang Bantuin
-													{% endif %}
+													{{ getprofil.status_pekerja }}
 												</td>
+											</tr>
+											<tr>
+												<td><strong>Email : </strong></td>
+												<td><a href="mailto:{{ getusrname.email }}">{{ getusrname.email }}</a></td>
 											</tr>
 											<tr>
 												<td><strong>Website : </strong></td>

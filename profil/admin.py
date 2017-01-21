@@ -2,18 +2,13 @@ from django.contrib import admin
 
 from .models import *
 
-class HobiModelAdmin(admin.TabularInline):
-	model = Hobi
-	extra = 1
-
 class ProfilModelAdmin(admin.ModelAdmin):
-	inlines = [HobiModelAdmin]
+	# list display yang ditampilkan
 	list_display = [
 		"user",
 		"avatar",
 		"tgl_lahir", 
 		"jenis_kelamin",
-		"_hobi",
 		"alamat",
 		"kode_pos",
 		"desa",
@@ -32,23 +27,16 @@ class ProfilModelAdmin(admin.ModelAdmin):
 		"keahlian",
 		]
 
-	def _hobi(self, obj):
-		return ','.join([o.namahobi for o in obj.hobi.all()])
-
-	_hobi.short_description = "hobi"
-
+	# link yang bisa di klik adalah user
 	list_display_links = ["user"]
+
+	# pilihan filter pencarian, memudahkan pencarian berdasarkan objek
 	list_filter = [
-		"tgl_lahir", 
 		"jenis_kelamin",
-		"alamat",
-		"kode_pos",
-		"desa",
-		"kecamatan",
-		"kabupaten",
-		"provinsi",
-		"negara",
+		"bahasa",
 		]
+
+	# pencarian diatur berdasarkan username
 	search_fields = ["user__username"]
 	
 	class Meta:

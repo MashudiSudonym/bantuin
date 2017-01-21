@@ -1,0 +1,17 @@
+{% if user.username == getusrname.username %}
+
+	<a href="/">Home</a>
+
+	<h1>ini halaman edit profil {{ getusrname.username }}</h1>
+
+	<form action="." method="POST" enctype="multipart/form-data">
+		{% csrf_token %}
+		{{ form.as_p }}
+		<input type="submit" value="Simpan">
+	</form>
+
+{% else %}
+
+	<a href="/">Home</a>
+
+{% endif %}

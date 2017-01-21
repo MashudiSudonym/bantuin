@@ -12,18 +12,24 @@
 
 <div class="form">
   <a href="/"><img src="/static/register/img/logo.png" height="128px" width="128px" /></a>
+
   	<form method="post" action=".">
         {% csrf_token %}
 
-        {{ form.non_field_errors }}
+        {% if form.non_field_errors %}
+        {% for error in form.non_field_errors %}
+        <div class="alert alert-danger" role="alert">
+            <strong>{{ error|escape }}</strong>
+        </div>
+        {% endfor %}
+        {% endif %}
+        
         <p>
         {{ form.username }}
-        {{ form.username.errors }}
         </p>
 
         <p>
         {{ form.password }}
-        {{ form.password.errors }}
         </p>
 
         <button type="submit">Log in</button>

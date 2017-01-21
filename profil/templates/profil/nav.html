@@ -18,17 +18,20 @@
                 {% else %}
                 <img src="/static/img/users.svg" class="img-circle" alt="User Image" style="height: 20px;">
                 {% endif %}
+                {{ user.username }}
+            {% else %}
+                <strong>Profil</strong>
             {% endif %}
             <i class="fa fa-caret-down"></i>
         </a>
         <ul class="dropdown-menu dropdown-user">
             {% if user.is_authenticated %}
             <li>
-                <a href="/profil/{{ user.username }}"><i class="fa fa-user fa-fw"></i> {{ user.username }}</a>
+                <a href="/profil/{{ user.username }}"><i class="fa fa-user fa-fw"></i> Profil Saya</a>
             </li>
             <li class="divider"></li>
             <li>
-                <a href="{% url 'auth_logout' %}"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                <a href="{% url 'auth_logout' %}"><i class="fa fa-sign-out fa-fw"></i> Keluar</a>
             </li>
             {% else %}
             <li>

@@ -3,9 +3,12 @@ from __future__ import unicode_literals
 from django.db import models
 from django.contrib.auth.models import User
 
+
+# memberi nama folder atau lokasi unggah avatar berdasarkan username yang menunggah
 def upload_location(instance, filename):
 	return "%s/%s" %(instance.user, filename)
 
+# table database Profil untuk Profil App
 class Profil(models.Model):
 	# profil dasar
 	user = models.ForeignKey(User, related_name='user')
@@ -16,6 +19,7 @@ class Profil(models.Model):
 			('Wanita', 'Wanita'),
 		)
 	jenis_kelamin = models.CharField(max_length=12, choices=JENIS_KELAMIN)
+	self_introduction = models.TextField()
 
 	# alamat
 	alamat = models.CharField(max_length=200)
@@ -28,17 +32,21 @@ class Profil(models.Model):
 
 	# Kontak
 	phone = models.CharField(max_length=150)
-	self_introduction = models.TextField()
 	website = models.URLField(blank=True)
 	fb = models.URLField(blank=True)
 	twitter = models.URLField(blank=True)
 	googleplus = models.URLField(blank=True)
 
 	# lain-lain
-	status_pekerja = models.BooleanField(default=False)
-	bahasa = models.CharField(max_length=150, blank=True)
+	STATUS_PEKERJA = (
+			('Bukan Pekerja', 'Bukan Pekerja'),
+			('Pekerja', 'Pekerja'),
+		)
+	status_pekerja = models.CharField(max_length=24, choices=STATUS_PEKERJA, default='Bukan Pekerja')
+	BAHASA = (
+			('Bahasa Indonesia', 'Bahasa Indonesia'),
+			('English', 'English'),
+			('Other', 'Other'),
+		)
+	bahasa = models.CharField(max_length=150, choices=BAHASA)
 	keahlian = models.TextField(blank=True)
-
-class Hobi(models.Model):
-	profil = models.ForeignKey(Profil, related_name='hobi')
-	namahobi = models.CharField(max_length=254)
