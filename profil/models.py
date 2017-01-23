@@ -49,4 +49,3 @@ class Profil(models.Model):
 			('Other', 'Other'),
 		)
 	bahasa = models.CharField(max_length=150, choices=BAHASA)
-	keahlian = models.TextField(blank=True)
