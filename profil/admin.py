@@ -24,7 +24,6 @@ class ProfilModelAdmin(admin.ModelAdmin):
 		"googleplus",
 		"status_pekerja",
 		"bahasa",
-		"keahlian",
 		]
 
 	# link yang bisa di klik adalah user
