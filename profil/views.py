@@ -6,7 +6,7 @@ from django.conf import settings
 
 from django.contrib.auth.models import User
 from .models import Profil
-from .forms import ProfilForm, UsernameForm
+from .forms import ProfilForm, EmailForm, FullnameForm, UsernameForm
 
 def index(request, username):
 	
@@ -32,6 +32,8 @@ def edit(request, username):
 
 	getprofil = Profil.objects.filter(user__username=username).first()
 
+	getavatarusr = Profil.objects.filter(user__username=request.user.username).first()
+
 	if request.method == 'POST':
 		form = ProfilForm(request.POST or None, request.FILES or None, instance=getprofil)
 		if form.is_valid():
@@ -44,6 +46,7 @@ def edit(request, username):
 	context = {
 		"getusrname": getusrname,
 		"getprofil": getprofil,
+		"getavatarusr": getavatarusr,	
 		"form": form,
 	}
 
@@ -54,6 +57,8 @@ def edit(request, username):
 def usernameedit(request, username):
 	
 	getusrname = get_object_or_404(User, username=username)
+
+	getavatarusr = Profil.objects.filter(user__username=request.user.username).first()
 
 	if request.method == 'POST':
 		form = UsernameForm(request.POST or None, instance=getusrname)
@@ -66,7 +71,56 @@ def usernameedit(request, username):
 
 	context = {
 		"getusrname": getusrname,
+		"getavatarusr": getavatarusr,
 		"form": form,
 	}
 
 	return render(request, 'profil/username_edit.html', context)
+
+@login_required(login_url=settings.LOGIN_URL)
+def emailedit(request, username):
+	
+	getusrname = get_object_or_404(User, username=username)
+
+	getavatarusr = Profil.objects.filter(user__username=request.user.username).first()
+
+	if request.method == 'POST':
+		form = EmailForm(request.POST or None, instance=getusrname)
+		if form.is_valid():
+			email = form.save(commit = False)
+			email.save()
+			return HttpResponseRedirect('../../../profil/'+getusrname.username) # << redirect pakai url macam apa ini -_-
+	else:
+		form = EmailForm(instance=getusrname)
+
+	context = {
+		"getusrname": getusrname,
+		"getavatarusr": getavatarusr,
+		"form": form,
+	}
+
+	return render(request, 'profil/email_edit.html', context)
+
+@login_required(login_url=settings.LOGIN_URL)
+def namaedit(request, username):
+	
+	getusrname = get_object_or_404(User, username=username)
+
+	getavatarusr = Profil.objects.filter(user__username=request.user.username).first()
+
+	if request.method == 'POST':
+		form = FullnameForm(request.POST or None, instance=getusrname)
+		if form.is_valid():
+			fullname = form.save(commit = False)
+			fullname.save()
+			return HttpResponseRedirect('../../../profil/'+getusrname.username) # << redirect pakai url macam apa ini -_-
+	else:
+		form = FullnameForm(instance=getusrname)
+
+	context = {
+		"getusrname": getusrname,
+		"getavatarusr": getavatarusr,
+		"form": form,
+	}
+
+	return render(request, 'profil/fullname_edit.html', context)

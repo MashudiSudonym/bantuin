@@ -5,7 +5,7 @@
 {% load crispy_forms_tags %}
 
 <!--judul-->
-{% block title %} {{ getusrname.username }} Edit Username | Bantuin {% endblock %}
+{% block title %} {{ getusrname.username }} Edit Nama | Bantuin {% endblock %}
 
 <!--konten-->
 {% block content %}
@@ -15,12 +15,12 @@
         <div class="col-lg-12">
             {% if user.username == getusrname.username %}
 
-			<h1 class="page-header">Edit Username {{ getusrname.username }}</h1>
+			<h1 class="page-header">Edit Nama Lengkap</h1>
 
 			<form action="." method="POST" enctype="multipart/form-data">
 				{% csrf_token %}
 				{{ form|crispy }}
-				<input type="submit" class="btn btn-primary btn-lg btn-block" value="Simpan">
+				<input type="submit" class="btn btn-primary" value="Simpan">
 			</form>
 
 		{% else %}

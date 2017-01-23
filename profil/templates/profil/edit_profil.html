@@ -1,20 +1,85 @@
-{% if user.username == getusrname.username %}
+<!--load base profillayout-->
+{% extends 'profil/base.html' %}
 
-	<a href="/">Home</a>
+<!-- load crispy forms tags -->
+{% load crispy_forms_tags %}
 
-	<h1>ini halaman edit profil {{ getusrname.username }}</h1>
+<!-- load widget tweaks -->
+{% load widget_tweaks %}
 
-	{% if getprofil.avatar.url != None %}
-	<img src="{{ getprofil.avatar.url }}" style="max-width: 25%;"><br>
-	{% endif %}
-	<form action="." method="POST" enctype="multipart/form-data">
-		{% csrf_token %}
-		{{ form.as_p }}
-		<input type="submit" value="Simpan">
-	</form>
+<!--judul-->
+{% block title %} {{ getusrname.username }} Edit Profil | Bantuin {% endblock %}
 
-{% else %}
+<!--konten-->
+{% block content %}
 
-	<a href="/">Home</a>
+<div id="page-wrapper" style="margin-top:50px">
+    <div class="row">
+        <div class="col-lg-12">
+            {% if user.username == getusrname.username %}
 
-{% endif %}
+			<h1 class="page-header">Edit Profil {{ getusrname.username }}</h1>
+
+			<div class="col-lg-4">
+                <p>
+	            {% if getprofil.avatar.url != None %}
+				<img src="{{ getprofil.avatar.url }}" class="img-responsive img-thumbnail img-rounded center-block">
+				{% else %}
+				<img src="/static/img/users.svg" class="img-responsive img-thumbnail img-rounded center-block">
+				{% endif %}
+				</p>
+            </div>
+            <div class="col-lg-7">
+            <p>
+            	<strong>Display Name : </strong> {{ getusrname.first_name }} {{ getusrname.last_name }} <a href="/profil/namaedit/{{ getusrname.username }}"><i class="fa fa-pencil fa-fw"></i></a>
+            </p>
+            <p>
+            	<strong>User Name : </strong> {{ getusrname.username }} <a href="/profil/usernameedit/{{ getusrname.username }}"><i class="fa fa-pencil fa-fw"></i></a>
+            </p>
+            <p>
+            	<strong>Email : </strong> <a href="mailto:{{ getusrname.email }}">{{ getusrname.email }}</a> <a href="/profil/emailedit/{{ getusrname.username }}"><i class="fa fa-pencil fa-fw"></i></a>
+            </p>
+			<form action="." method="POST" enctype="multipart/form-data">
+				{% csrf_token %}
+				<!-- profil dasar -->
+				<select name="user" id="id_user" style="visibility:hidden;">
+					<option value="{{ getusrname.id }}" selected="{{ getusrname.id }}">{{ getusrname.id}}</option>
+				</select>
+				{{ form.avatar|as_crispy_field }}
+				{{ form.tgl_lahir|as_crispy_field }}
+				{{ form.jenis_kelamin|as_crispy_field }}
+				{{ form.self_introduction|as_crispy_field }}
+				<!-- alamat -->
+				{{ form.alamat|as_crispy_field }}
+				{{ form.kode_pos|as_crispy_field }}
+				{{ form.desa|as_crispy_field }}
+				{{ form.kecamatan|as_crispy_field }}
+				{{ form.kabupaten|as_crispy_field }}
+				{{ form.provinsi|as_crispy_field }}
+				{{ form.negara|as_crispy_field }}
+				<!-- kontak -->
+				{{ form.phone|as_crispy_field }}
+				{{ form.website|as_crispy_field }}
+				{{ form.fb|as_crispy_field }}
+				{{ form.twitter|as_crispy_field }}
+				{{ form.googleplus|as_crispy_field }}
+				<!-- lain-lain -->
+				{{ form.status_pekerja|as_crispy_field }}
+				{{ form.bahasa|as_crispy_field }}
+				<button type="submit" class="btn btn-primary btn-lg btn-block">Simpan</button><br><br><br>
+			</form>
+			</div>
+
+		{% else %}
+
+			<meta http-equiv="refresh" content="0; url=/">
+
+		{% endif %}
+
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>            
+</div>
+<!-- /#page-wrapper -->
+
+{% endblock %}

@@ -43,11 +43,17 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # plugin
+    'crispy_forms',
+    'widget_tweaks',
+    # app
     'home',
     'about',
     'profil',
     'jasa',
 ]
+
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 # jet admin template pack
 JET_DEFAULT_THEME = 'default'
@@ -93,6 +99,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
 ]
 
 ROOT_URLCONF = 'webbantuin.urls'

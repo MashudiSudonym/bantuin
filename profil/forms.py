@@ -4,23 +4,56 @@ from django import forms
 from .models import Profil
 from django.contrib.auth.models import User
 
-class UsernameForm(ModelForm):
+class FullnameForm(ModelForm):
+	first_name = forms.CharField(
+		required = True,
+		label = 'Nama Depan',
+		widget = forms.TextInput(
+			attrs = {'placeholder': 'Nama Depan'}
+			)
+		)
+
+	last_name = forms.CharField(
+		required = True,
+		label = 'Nama Belakang',
+		widget = forms.TextInput(
+			attrs = {'placeholder': 'Nama Belakang'}
+			)
+		)
+
 	class Meta:
 		model = User
+		fields = []
 
-		fields = [
-			"username",
-			"first_name",
-			"last_name",
-			"email",
-		]
+class UsernameForm(ModelForm):
+	username = forms.CharField(
+		required = True,
+		label = 'Username',
+		max_length = 50,
+		widget = forms.TextInput(
+			attrs = {'placeholder': 'Your Username'}
+			)
+		)
 
-		labels = {
-			'username': "Username",
-			'first_name': "Nama Depan",
-			'last_name': "Nama Belakang",
-			'email': "Email",
-		}
+	class Meta:
+		model = User
+		fields = []
+
+class EmailForm(ModelForm):
+	email = forms.EmailField(
+		required = True,
+		label = 'Email',
+		widget = forms.TextInput(
+			attrs = {'placeholder': 'Email'}
+			)
+		)
+
+	class Meta:
+		model = User
+		fields = []
+
+class DateInput(forms.DateInput):
+	input_type = 'date'
 
 class ProfilForm(ModelForm):
 	class Meta:
@@ -28,6 +61,7 @@ class ProfilForm(ModelForm):
 
 		fields = [
 			# profil dasar
+			"user",
 			"avatar",
 			"tgl_lahir",
 			"jenis_kelamin",
@@ -52,8 +86,7 @@ class ProfilForm(ModelForm):
 			# lain-lain
 			"status_pekerja",
 			"bahasa",
-			"keahlian",
-			]
+		]
 
 		labels = {
 			# profil dasar
@@ -72,20 +105,17 @@ class ProfilForm(ModelForm):
 			'negara': "Negara",
 
 			# kontak
-			'phone': "Nomor Telefon / HP",
+			'phone': "Phone",
 			'website': "Website",
 			'fb': "Facebook",
 			'twitter': "Twitter",
-			'googleplus': "G+",
+			'googleplus': "Google Plus",
 
 			# lain-lain
-			'status_pekerja': "Anda bisa memberi Bantuan ? ",
-			'bahasa': "Bahasa Utama",
-			'keahlian': "Keahlian",
+			'status_pekerja': "Status Pekerja",
+			'bahasa': "Bahasa",
 		}
 
-		widget = {
-			'self_introduction': forms.Textarea(attrs={ 'cols': 50, 'rows': 10 }),
-			'keahlian': forms.Textarea(attrs={ 'cols': 50, 'rows': 10 }),
-			'tgl_lahir': forms.DateInput(attrs={'placeholder': 'YYYY-MM-DD'}),
+		widgets = {
+			'tgl_lahir': DateInput(),
 		}
