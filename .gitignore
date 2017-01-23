@@ -2,7 +2,7 @@ db.sqlite3
 
 webbantuin/settings/local.py
 
-*/migrations/*
+*/migrations/00*
 
 # menggunakan rekomendasi dari github gitignore python
 # Byte-compiled / optimized / DLL files
