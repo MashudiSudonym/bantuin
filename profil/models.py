@@ -39,10 +39,10 @@ class Profil(models.Model):
 
 	# lain-lain
 	STATUS_PEKERJA = (
-			('Bukan Pekerja', 'Bukan Pekerja'),
+			('Bukan_Pekerja', 'Bukan Pekerja'),
 			('Pekerja', 'Pekerja'),
 		)
-	status_pekerja = models.CharField(max_length=24, choices=STATUS_PEKERJA, blank=True)
+	status_pekerja = models.CharField(max_length=24, choices=STATUS_PEKERJA, default='Bukan_Pekerja', blank=True)
 	BAHASA = (
 			('Bahasa Indonesia', 'Bahasa Indonesia'),
 			('English', 'English'),
