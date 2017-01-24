@@ -84,7 +84,7 @@ class ProfilForm(ModelForm):
 			"googleplus",
 
 			# lain-lain
-			"status_pekerja",
+			"statuspekerja",
 			"bahasa",
 		]
 
