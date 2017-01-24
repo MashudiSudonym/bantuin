@@ -22,7 +22,7 @@ class ProfilModelAdmin(admin.ModelAdmin):
 		"fb",
 		"twitter",
 		"googleplus",
-		"status_pekerja",
+		"statuspekerja",
 		"bahasa",
 		]
 

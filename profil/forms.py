@@ -112,7 +112,7 @@ class ProfilForm(ModelForm):
 			'googleplus': "Google Plus",
 
 			# lain-lain
-			'status_pekerja': "Status Pekerja",
+			'statuspekerja': "Status Pekerja",
 			'bahasa': "Bahasa",
 		}
 
