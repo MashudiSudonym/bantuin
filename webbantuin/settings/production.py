@@ -43,9 +43,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
     # plugin
     'crispy_forms',
     'widget_tweaks',
+
     # app
     'home',
     'about',

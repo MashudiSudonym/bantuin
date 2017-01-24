@@ -42,7 +42,7 @@ class Profil(models.Model):
 			('Bukan Pekerja', 'Bukan Pekerja'),
 			('Pekerja', 'Pekerja'),
 		)
-	status_pekerja = models.CharField(max_length=24, choices=STATUS_PEKERJA, default='Bukan Pekerja')
+	status_pekerja = models.CharField(max_length=24, choices=STATUS_PEKERJA, blank=True)
 	BAHASA = (
 			('Bahasa Indonesia', 'Bahasa Indonesia'),
 			('English', 'English'),
