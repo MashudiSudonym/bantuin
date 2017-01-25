@@ -23,10 +23,8 @@ Kami asumsikan kita sudah mengetahui tentang virtualenv.
 * python-3.5.2
 * Django 1.10.3
 * django-registration 2.1.2
-* django-bootstrap3 7.1.0
-* gunicorn 19.6.0
-* whitenoise 3.2.2
-* django-jet 1.0.4
+
+Selebihnya baca requirements.txt
 
 # Pasang Bantuin ke localhost
 
