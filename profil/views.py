@@ -8,6 +8,7 @@ from django.contrib.auth.models import User
 from .models import Profil
 from .forms import ProfilForm, EmailForm, FullnameForm, UsernameForm
 
+# index view profil
 def index(request, username):
 	
 	getusrname = get_object_or_404(User, username=username)
@@ -24,7 +25,7 @@ def index(request, username):
 
 	return render(request, 'profil/profil.html', context)
 
-
+# view edit profil
 @login_required(login_url=settings.LOGIN_URL)
 def edit(request, username):
 	
@@ -52,7 +53,7 @@ def edit(request, username):
 
 	return render(request, 'profil/edit_profil.html', context)
 
-
+# view edit username
 @login_required(login_url=settings.LOGIN_URL)
 def usernameedit(request, username):
 	
@@ -77,6 +78,7 @@ def usernameedit(request, username):
 
 	return render(request, 'profil/username_edit.html', context)
 
+# view edit email
 @login_required(login_url=settings.LOGIN_URL)
 def emailedit(request, username):
 	
@@ -101,6 +103,7 @@ def emailedit(request, username):
 
 	return render(request, 'profil/email_edit.html', context)
 
+# view edit nama depan dan belakang
 @login_required(login_url=settings.LOGIN_URL)
 def namaedit(request, username):
 	
