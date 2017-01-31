@@ -38,6 +38,16 @@ Install paket yang dibutuhkan
 
 > pip install -r requirements.txt
 
+Migrasi Database
+
+> python manage.py makemigrations
+
+> python manage.py migrate
+
+Buatlah akun Admin Django
+
+> python manage.py createsuperuser
+
 
 # Menjalankan Bantuin di localhost
 

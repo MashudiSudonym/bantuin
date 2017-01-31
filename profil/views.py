@@ -11,11 +11,11 @@ from .forms import ProfilForm, EmailForm, FullnameForm, UsernameForm
 # index view profil
 def index(request, username):
 	
-	getusrname = get_object_or_404(User, username=username)
+	getusrname = get_object_or_404(User, username=username) # mendapatkan username, namun jika tidak menemukan akan diarahkan ke halaman 404
 
-	getprofil = Profil.objects.filter(user__username=username).first()
+	getprofil = Profil.objects.filter(user__username=username).first() # mendapatkan data dari tabel profil dengan pemicu username yang sudah didapatkan
 
-	getavatarusr = Profil.objects.filter(user__username=request.user.username).first()
+	getavatarusr = Profil.objects.filter(user__username=request.user.username).first() # # mendapatkan data link foto / avatar
 	
 	context = {
 		"getusrname": getusrname,

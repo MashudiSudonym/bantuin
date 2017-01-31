@@ -1,5 +1,8 @@
 {% extends "registerlayout/base.html" %}
 
+<!-- load widget tweaks -->
+{% load widget_tweaks %}
+
 <!--judul-->
 {% block title %} Bantuin - Login{% endblock %}
 
@@ -25,11 +28,11 @@
         {% endif %}
         
         <p>
-        {{ form.username }}
+        {% render_field form.username placeholder=form.username.label %}
         </p>
 
         <p>
-        {{ form.password }}
+        {% render_field form.password placeholder=form.password.label %}
         </p>
 
         <button type="submit">Log in</button>

@@ -1,6 +1,9 @@
 {% extends "registerlayout/base.html" %}
 {% load i18n %}
 
+<!-- load widget tweaks -->
+{% load widget_tweaks %}
+
 <!--judul-->
 {% block title %} Bantuin - Registrasi {% endblock %}
 
@@ -26,7 +29,7 @@
         {% endif %}
 
         <p>
-        {{ form.username }}
+        {% render_field form.username placeholder=form.username.label %}
         </p>
 
         {% if form.email.errors %}
@@ -37,7 +40,7 @@
         {% endfor %}
         {% endif %}
         <p>
-        {{ form.email }}
+        {% render_field form.email placeholder=form.email.label %}
         </p>
 
         {% if form.password1.errors %}
@@ -48,7 +51,7 @@
         {% endfor %}
         {% endif %}
 		<p>
-        {{ form.password1 }}
+        {% render_field form.password1 placeholder=form.password1.label %}
         </p>
 
         {% if form.password2.errors %}
@@ -59,7 +62,7 @@
         {% endfor %}
         {% endif %}
 		<p>
-        {{ form.password2 }}
+        {% render_field form.password2 placeholder=form.password2.label %}
         </p>
 
 	    <button type="submit">Sign Up</button>
