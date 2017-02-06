@@ -5,6 +5,7 @@ from django.urls import reverse
 from django.conf import settings
 
 from django.contrib.auth.models import User
+from kategori.models import Kategori
 from .models import Profil
 from .forms import ProfilForm, EmailForm, FullnameForm, UsernameForm
 
@@ -13,12 +14,15 @@ def index(request, username):
 	
 	getusrname = get_object_or_404(User, username=username) # mendapatkan username, namun jika tidak menemukan akan diarahkan ke halaman 404
 
+	getkategori = Kategori.objects.all().order_by("kategori")
+
 	getprofil = Profil.objects.filter(user__username=username).first() # mendapatkan data dari tabel profil dengan pemicu username yang sudah didapatkan
 
 	getavatarusr = Profil.objects.filter(user__username=request.user.username).first() # # mendapatkan data link foto / avatar
 	
 	context = {
 		"getusrname": getusrname,
+		"kategori_list": getkategori,
 		"getprofil": getprofil,
 		"getavatarusr": getavatarusr,
 	}
@@ -30,6 +34,8 @@ def index(request, username):
 def edit(request, username):
 	
 	getusrname = get_object_or_404(User, username=username)
+
+	getkategori = Kategori.objects.all().order_by("kategori")
 
 	getprofil = Profil.objects.filter(user__username=username).first()
 
@@ -46,6 +52,7 @@ def edit(request, username):
 
 	context = {
 		"getusrname": getusrname,
+		"kategori_list": getkategori,
 		"getprofil": getprofil,
 		"getavatarusr": getavatarusr,	
 		"form": form,
@@ -58,6 +65,8 @@ def edit(request, username):
 def usernameedit(request, username):
 	
 	getusrname = get_object_or_404(User, username=username)
+
+	getkategori = Kategori.objects.all().order_by("kategori")
 
 	getavatarusr = Profil.objects.filter(user__username=request.user.username).first()
 
@@ -72,6 +81,7 @@ def usernameedit(request, username):
 
 	context = {
 		"getusrname": getusrname,
+		"kategori_list": getkategori,
 		"getavatarusr": getavatarusr,
 		"form": form,
 	}
@@ -83,6 +93,8 @@ def usernameedit(request, username):
 def emailedit(request, username):
 	
 	getusrname = get_object_or_404(User, username=username)
+
+	getkategori = Kategori.objects.all().order_by("kategori")
 
 	getavatarusr = Profil.objects.filter(user__username=request.user.username).first()
 
@@ -97,6 +109,7 @@ def emailedit(request, username):
 
 	context = {
 		"getusrname": getusrname,
+		"kategori_list": getkategori,
 		"getavatarusr": getavatarusr,
 		"form": form,
 	}
@@ -108,6 +121,8 @@ def emailedit(request, username):
 def namaedit(request, username):
 	
 	getusrname = get_object_or_404(User, username=username)
+
+	getkategori = Kategori.objects.all().order_by("kategori")
 
 	getavatarusr = Profil.objects.filter(user__username=request.user.username).first()
 
@@ -122,6 +137,7 @@ def namaedit(request, username):
 
 	context = {
 		"getusrname": getusrname,
+		"kategori_list": getkategori,
 		"getavatarusr": getavatarusr,
 		"form": form,
 	}

@@ -16,17 +16,16 @@
                 <a href="/"><i class="fa fa-home fa-fw"></i> Dashboard</a>
             </li>
             <li>
-                <a href="#"><i class="fa fa-book fa-fw" aria-hidden="true"></i> Bantuan <span class="fa arrow"></span></a>
+                <a href="#"><i class="fa fa-book fa-fw" aria-hidden="true"></i> Kategori Bantuan <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="flot.html">Rumah Tangga</a>
+                        <a href="/kategori/">Semua Kategori Bantuan</a>
                     </li>
+                    {% for kategori in kategori_list %}
                     <li>
-                        <a href="morris.html">Jahit</a>
+                        <a href="flot.html">{{ kategori | upper }}</a>
                     </li>
-                    <li>
-                        <a href="morris.html">Servis</a>
-                    </li>
+                    {% endfor %}
                 </ul>
                 <!-- /.nav-second-level -->
             </li>

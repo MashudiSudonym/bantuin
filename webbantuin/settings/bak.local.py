@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'home',
     'about',
     'profil',
+    'kategori',
     'jasa',
 ]
 

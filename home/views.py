@@ -5,16 +5,19 @@ from django.urls import reverse
 from django.conf import settings
 
 from django.contrib.auth.models import User
+from kategori.models import Kategori
 from profil.models import Profil
 
 def index(request):
 	if request.user.is_authenticated():
 
 		getusrname = User.objects.filter(username=request.user)
+		getkategori = Kategori.objects.all().order_by("kategori")
 		getprofil = Profil.objects.filter(user__username=request.user)
 		
 		context = {
 			"usrname_list": getusrname,
+			"kategori_list": getkategori,
 			"profil_list": getprofil,
 		}
 
