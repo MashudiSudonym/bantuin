@@ -16,9 +16,17 @@
 <div id="page-wrapper" style="margin-top:35px">
     <div class="row">
         <div class="col-lg-12">
+
             {% if user.username == getusrname.username %}
 
 			<h1 class="page-header">Edit Profil {{ getusrname.username }}</h1>
+			
+			<div class="alert alert-danger" role="alert">
+				<p>
+		            <strong>upload avatar tidak dapat digunakan pada situs contoh ini.</strong><br>
+		        	<strong>upload avatar hanya dapat digunakan pada localhost atau development mode</strong>
+		    	</p>
+		    </div>
 
 			<div class="col-lg-4">
                 <p>
