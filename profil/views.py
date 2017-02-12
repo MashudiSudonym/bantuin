@@ -1,4 +1,5 @@
 from django.http import HttpResponse, HttpResponseRedirect
+from django.contrib import messages
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse
@@ -46,6 +47,10 @@ def edit(request, username):
 		if form.is_valid():
 			profil = form.save(commit = False)
 			profil.save()
+			messages.success(request, 'Perubahan pada profil anda telah tersimpan.', extra_tags='alert alert-success')
+			return HttpResponseRedirect('../../../profil/'+getusrname.username) # << redirect pakai url macam apa ini -_-
+		else:
+			messages.warning(request, 'Anda gagal melakukan perubahan pada profil.', extra_tags='alert alert-danger')
 			return HttpResponseRedirect('../../../profil/'+getusrname.username) # << redirect pakai url macam apa ini -_-
 	else:
 		form = ProfilForm(instance=getprofil)
@@ -75,6 +80,10 @@ def usernameedit(request, username):
 		if form.is_valid():
 			username = form.save(commit = False)
 			username.save()
+			messages.success(request, 'Perubahan pada username anda telah tersimpan.', extra_tags='alert alert-success')
+			return HttpResponseRedirect('../../../profil/'+getusrname.username) # << redirect pakai url macam apa ini -_-
+		else:
+			messages.warning(request, 'Anda gagal melakukan perubahan pada profil.', extra_tags='alert alert-danger')
 			return HttpResponseRedirect('../../../profil/'+getusrname.username) # << redirect pakai url macam apa ini -_-
 	else:
 		form = UsernameForm(instance=getusrname)
@@ -103,6 +112,10 @@ def emailedit(request, username):
 		if form.is_valid():
 			email = form.save(commit = False)
 			email.save()
+			messages.success(request, 'Perubahan pada email anda telah tersimpan.', extra_tags='alert alert-success')
+			return HttpResponseRedirect('../../../profil/'+getusrname.username) # << redirect pakai url macam apa ini -_-
+		else:
+			messages.warning(request, 'Anda gagal melakukan perubahan pada profil.', extra_tags='alert alert-danger')
 			return HttpResponseRedirect('../../../profil/'+getusrname.username) # << redirect pakai url macam apa ini -_-
 	else:
 		form = EmailForm(instance=getusrname)
@@ -131,6 +144,10 @@ def namaedit(request, username):
 		if form.is_valid():
 			fullname = form.save(commit = False)
 			fullname.save()
+			messages.success(request, 'Perubahan pada nama anda telah tersimpan.', extra_tags='alert alert-success')
+			return HttpResponseRedirect('../../../profil/'+getusrname.username) # << redirect pakai url macam apa ini -_-
+		else:
+			messages.warning(request, 'Anda gagal melakukan perubahan pada profil.', extra_tags='alert alert-danger')
 			return HttpResponseRedirect('../../../profil/'+getusrname.username) # << redirect pakai url macam apa ini -_-
 	else:
 		form = FullnameForm(instance=getusrname)
