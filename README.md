@@ -1,10 +1,12 @@
 # Bantuin
 
-Bantuin berawal dari projek mata kuliah RPL 2, yang kemudian tetap kami kembangkan menjadi kode sumber untuk jenis aplikasi Market Place berbasis Django.
+Bantuin berawal dari projek mata kuliah RPL 2, yang kemudian tetap kami kembangkan menjadi kode sumber berbasis Django.
 
 Kami berharap dengan kode sumber ini dapat membantu teman-teman untuk belajar tentang Django, dan mengembangkan produk yang memiliki konsep yang sama.
 
-Konsep bantuin adalah guna memudahkan masyarakat mencari bantuan terhadap masalah teknis yang sedang dialami semisal saat membutuhkan bantuan untuk servis peralatan elektronik, menjahit baju, sampai menjari jasa tukang pijat.
+Fokus utama projek ini adalah untuk belajar tentang konsep dasar framework django, kami berusaha memberi komentar pada setiap skrip agar teman-teman yang ingin belajar berdasarkan contoh projek ini lebih mudah membaca dan memahami alur kerjanya. Namun, jika ada yang ingin ditanyakan bisa menghubungi saya via email di muhamadmashudiardiwinata[at]gmail.com atau [Telegram ke SudonymMashudi](http://telegram.me/SudonymMashudi)
+
+Konsep bantuin adalah guna memudahkan masyarakat mencari bantuan terhadap masalah teknis yang sedang dialami semisal saat membutuhkan bantuan untuk servis peralatan elektronik, menjahit baju, sampai mencari jasa tukang pijat.
 
 ## Tim Bantuin
 

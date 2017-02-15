@@ -1,6 +1,9 @@
 <!--load base dashboardlayout-->
 {% extends 'dashboard/base.html' %}
 
+<!-- load custom templatetags -->
+{% load shuffle %}
+
 <!--judul-->
 {% block title %} Bantuin {% endblock %}
 
@@ -36,8 +39,7 @@
 				<h2 class="page-header">Pahlawan Kita</h1>
 				
 				<ul class="list-group">
-					{% for pekerja in profil_pekerja %}
-					
+					{% for pekerja in profil_pekerja|shuffle %}
 						{% if pekerja.avatar.url != None %}
 							<li class="list-group-item">
 								<div class="media">
@@ -60,12 +62,11 @@
 									</div>
 								</div>
 							</li>
-							<li class="list-group-item">
-								<a href="#"><strong>dan banyak lagi</strong></a>
-							</li>
 						{% endif %}
-					
 					{% endfor %}
+					<li class="list-group-item">
+						<a href="#"><strong>dan banyak lagi</strong></a>
+					</li>
 				</ul>
 			</div>
 		</div>
