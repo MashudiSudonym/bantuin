@@ -14,7 +14,7 @@ def index(request):
 		getusrname = User.objects.filter(username=request.user)
 		getkategori = Kategori.objects.all().order_by("kategori")
 		getprofil = Profil.objects.filter(user__username=request.user)
-		getprofil_pekerja = Profil.objects.all().order_by("statuspekerja")
+		getprofil_pekerja = Profil.objects.filter(statuspekerja = 'Pekerja')[:5]
 		
 		context = {
 			"usrname_list": getusrname,
