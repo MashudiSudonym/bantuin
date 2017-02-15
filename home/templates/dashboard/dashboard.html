@@ -37,6 +37,7 @@
 				
 				<ul class="list-group">
 					{% for pekerja in profil_pekerja %}
+					{% if pekerja.statuspekerja == "Pekerja" %}
 						{% if pekerja.avatar.url != None %}
 							<li class="list-group-item">
 								<div class="media">
@@ -60,6 +61,7 @@
 								</div>
 							</li>
 						{% endif %}
+					{% endif %}
 					{% endfor %}
 				</ul>
 			</div>
