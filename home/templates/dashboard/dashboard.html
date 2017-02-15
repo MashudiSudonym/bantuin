@@ -34,12 +34,33 @@
 			</div>
 			<div class="col-lg-6 col-md-6">
 				<h2 class="page-header">Pahlawan Kita</h1>
-
+				
 				<ul class="list-group">
-					<li class="list-group-item">Tes</li>
-					<li class="list-group-item">Tes</li>
-					<li class="list-group-item">Tes</li>
-					<li class="list-group-item">Tes</li>
+					{% for pekerja in profil_pekerja %}
+						{% if pekerja.avatar.url != None %}
+							<li class="list-group-item">
+								<div class="media">
+									<div class="media-left">
+										<img src="{{ pekerja.avatar.url }}" class="img-circle" alt="User Image" style="height: 20px;">		
+									</div>
+									<div class="media-body">
+										<a href="/profil/{{ pekerja.user }}"><strong>{{ pekerja.user | upper }}</strong></a>
+									</div>
+								</div>
+							</li>
+						{% else %}
+							<li class="list-group-item">
+								<div class="media">
+									<div class="media-left">
+										<img src="/static/img/users.svg" class="media-left img-circle" alt="User Image" style="height: 20px;">
+									</div>
+									<div class="media-body">
+										<a href="/profil/{{ pekerja.user }}"><strong>{{ pekerja.user | upper }}</strong></a>
+									</div>
+								</div>
+							</li>
+						{% endif %}
+					{% endfor %}
 				</ul>
 			</div>
 		</div>

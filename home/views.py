@@ -14,11 +14,13 @@ def index(request):
 		getusrname = User.objects.filter(username=request.user)
 		getkategori = Kategori.objects.all().order_by("kategori")
 		getprofil = Profil.objects.filter(user__username=request.user)
+		getprofil_pekerja = Profil.objects.all().order_by("statuspekerja")
 		
 		context = {
 			"usrname_list": getusrname,
 			"kategori_list": getkategori,
 			"profil_list": getprofil,
+			"profil_pekerja": getprofil_pekerja,
 		}
 
 		return render(request, 'dashboard/dashboard.html', context)
