@@ -25,6 +25,7 @@ urlpatterns = [
     url(r'^about/', include('about.urls')),
     url(r'^profil/', include('profil.urls', namespace='profil')),
     url(r'^kategori/', include('kategori.urls', namespace='kategori')),
+    url(r'^jasa/', include('jasa.urls', namespace='jasa')),
     url(r'^accounts/', include('registration.backends.hmac.urls')),
 ]
 
