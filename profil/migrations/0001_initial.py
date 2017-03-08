@@ -5,6 +5,7 @@ from __future__ import unicode_literals
 from django.conf import settings
 from django.db import migrations, models
 import django.db.models.deletion
+import profil.models
 
 
 class Migration(migrations.Migration):
@@ -13,15 +14,17 @@ class Migration(migrations.Migration):
 
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ('kategori', '0001_initial'),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Jasa',
+            name='Profil',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('nama_jasa', models.CharField(max_length=150)),
+                ('avatar', models.ImageField(blank=True, upload_to=profil.models.upload_location)),
+                ('tgl_lahir', models.DateField()),
+                ('jenis_kelamin', models.CharField(choices=[('Pria', 'Pria'), ('Wanita', 'Wanita')], max_length=12)),
+                ('self_introduction', models.TextField()),
                 ('alamat', models.CharField(max_length=200)),
                 ('kode_pos', models.CharField(max_length=6)),
                 ('desa', models.CharField(max_length=150)),
@@ -34,10 +37,9 @@ class Migration(migrations.Migration):
                 ('fb', models.URLField(blank=True)),
                 ('twitter', models.URLField(blank=True)),
                 ('googleplus', models.URLField(blank=True)),
-                ('terima_panggilan', models.CharField(blank=True, choices=[('tidak', 'Tidak'), ('ya', 'Ya')], default='tidak', max_length=15)),
-                ('nj_slug', models.SlugField(blank=True)),
-                ('kategori', models.ManyToManyField(to='kategori.Kategori')),
-                ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
+                ('statuspekerja', models.CharField(blank=True, choices=[('Bukan Pekerja', 'Bukan Pekerja'), ('Pekerja', 'Pekerja')], default='Bukan Pekerja', max_length=24)),
+                ('bahasa', models.CharField(choices=[('Bahasa Indonesia', 'Bahasa Indonesia'), ('English', 'English'), ('Other', 'Other')], max_length=150)),
+                ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='user', to=settings.AUTH_USER_MODEL)),
             ],
         ),
     ]
