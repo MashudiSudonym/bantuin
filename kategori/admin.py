@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import *
+from .models import Kategori
 
 class KategoriModelAdmin(admin.ModelAdmin):
 	list_display = ["kategori", "k_slug"]
