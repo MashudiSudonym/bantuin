@@ -10,7 +10,6 @@ from jasa.models import Jasa
 from profil.models import Profil
 
 def index(request):
-	
 	getusrname = User.objects.filter(username=request.user)
 
 	getkategori = Kategori.objects.all().order_by("kategori")
@@ -53,9 +52,8 @@ def index(request):
 
 	return render(request, 'kategori/kategori.html', context)
 
-def daftar(request, kategori):
-
-	judulhalaman = get_object_or_404(Kategori, kategori=kategori)
+def daftar(request, k_slug):
+	judulhalaman = get_object_or_404(Kategori, k_slug=k_slug)
 
 	getusrname = User.objects.filter(username=request.user)
 
@@ -63,7 +61,7 @@ def daftar(request, kategori):
 
 	getprofil = Profil.objects.filter(user__username=request.user)
 
-	getjasa = Jasa.objects.filter(kategori__kategori=kategori)
+	getjasa = Jasa.objects.filter(kategori__kategori=k_slug)
 		
 	context = {
 		"judulhalaman": judulhalaman,

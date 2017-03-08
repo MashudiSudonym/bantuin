@@ -1,6 +1,7 @@
 from __future__ import unicode_literals
 
 from django.db import models
+from django.template.defaultfilters import slugify
 from kategori.models import Kategori
 from django.contrib.auth.models import User
 
@@ -37,10 +38,19 @@ class Jasa(models.Model):
 		)
 	terima_panggilan = models.CharField(max_length=15, choices=TERIMA_PANGGILAN, default="tidak", blank=True)
 
+	# Slugify
+	nj_slug = models.SlugField(blank=True)
 
 	# biar bisa muncul kolom isi untuk kategori di admin.py
 	def kategories(self):
 		return ",".join([str(k) for k in self.kategori.all()])
+
+	# otomasis simpan slugify dengan nama jasa
+	def save(self, *args, **kwargs):
+		if not self.id:
+			self.nj_slug = slugify(self.nama_jasa)
+
+		super(Jasa, self).save(*args, **kwargs)
 
 	# for python 3
 	def __unicode__(self):

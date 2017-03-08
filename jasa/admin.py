@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import *
+from .models import Jasa
 
 class JasaModelAdmin(admin.ModelAdmin):
 	# list display yang ditampilkan
@@ -21,6 +21,7 @@ class JasaModelAdmin(admin.ModelAdmin):
 		"twitter",
 		"googleplus",
 		"terima_panggilan",
+		"nj_slug",
 		]
 
 	# pilihan filter pencarian, memudahkan pencarian berdasarkan objek
