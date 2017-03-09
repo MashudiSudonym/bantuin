@@ -31,7 +31,7 @@ def index(request):
 
 	count_reparasi = Jasa.objects.filter(kategori__kategori='reparasi').count()
 
-	count_rumahtangga = Jasa.objects.filter(kategori__kategori='rumah-tangga').count()
+	count_rumahtangga = Jasa.objects.filter(kategori__kategori='rumah tangga').count()
 
 	count_transportasi = Jasa.objects.filter(kategori__kategori='transportasi').count()
 		
