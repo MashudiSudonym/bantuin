@@ -61,8 +61,8 @@ def daftar(request, k_slug):
 
 	getprofil = Profil.objects.filter(user__username=request.user)
 
-	getjasa = Jasa.objects.filter(kategori__kategori=k_slug)
-		
+	getjasa = Jasa.objects.filter(kategori__k_slug=k_slug)
+
 	context = {
 		"judulhalaman": judulhalaman,
 		"usrname_list": getusrname,
