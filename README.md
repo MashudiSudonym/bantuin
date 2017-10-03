@@ -4,7 +4,7 @@ Bantuin berawal dari projek mata kuliah RPL 2, yang kemudian tetap kami kembangk
 
 Kami berharap dengan kode sumber ini dapat membantu teman-teman untuk belajar tentang Django, dan mengembangkan produk yang memiliki konsep yang sama.
 
-Fokus utama projek ini adalah untuk belajar tentang konsep dasar framework django, kami berusaha memberi komentar pada setiap skrip agar teman-teman yang ingin belajar berdasarkan contoh projek ini lebih mudah membaca dan memahami alur kerjanya. Namun, jika ada yang ingin ditanyakan bisa menghubungi saya via email di muhamadmashudiardiwinata[at]gmail.com atau [Telegram ke SudonymMashudi](http://telegram.me/SudonymMashudi)
+Fokus utama projek ini adalah untuk belajar tentang konsep dasar framework django, kami berusaha memberi komentar pada setiap skrip agar teman-teman yang ingin belajar berdasarkan contoh projek ini lebih mudah membaca dan memahami alur kerjanya. Namun, jika ada yang ingin ditanyakan bisa menghubungi saya via email di muhamadmashudiardiwinata[at]gmail.com atau [Telegram ke SudonymMashudi](http://telegram.me/Mashudi)
 
 Konsep bantuin adalah guna memudahkan masyarakat mencari bantuan terhadap masalah teknis yang sedang dialami semisal saat membutuhkan bantuan untuk servis peralatan elektronik, menjahit baju, sampai mencari jasa tukang pijat.
 
@@ -30,7 +30,8 @@ Selebihnya baca requirements.txt
 
 # Pasang Bantuin ke localhost
 
-catatan : buka dan edit file requirements.txt, hapus paket psycopg2==2.6.2 kemudian simpan dan lakukan installasi seperti panduan ini, jika ingin deploy ke heroku kembalikan lagi psycopg2==2.6.2 setelah install paket agar tidak mengalami masalah saat mencoba deploy ke heroku.
+catatan : buka dan edit file requirements.txt, hapus paket psycopg2==2.6.2 kemudian simpan dan lakukan installasi seperti panduan ini, jika ingin deploy ke heroku kembalikan lagi psycopg2==2.6.2 setelah install paket agar tidak mengalami masalah saat mencoba deploy ke heroku. Jika mengalami masalah, atau bingung dengan panduan pemasangan ini silahkan kontak melalui email di muhamadmashudiardiwinata[at]gmail.com atau [Telegram ke SudonymMashudi](http://telegram.me/Mashudi)
+
 
 Copy source code
 
